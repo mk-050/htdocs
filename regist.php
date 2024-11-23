@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
+    <title>account</title>
     <link rel="stylesheet" type="text/css" href="regist.css" </head>
 
 <body>
-
     <header>
         <ul>
             <li>トップ</li>
@@ -20,22 +20,27 @@
 
     </header>
 
-    アカウント登録画面<br>
+    <h1>アカウント登録画面</h1><br>
 
     <main>
+        <div class="main-container">
 
-        名前（姓）<input type="text" pattern="[\u3042-\u309F\u30FC]+" maxlength="10"><br>
-        名前（名）<input type="text" pattern="[\u3041-\u3096]*" maxlength="10"><br>
-        カナ（姓）<input type="text" pattern="[\u30A1-\u30F6]*" maxlength="10"><br>
-        カナ（名）<input type="text" pattern="[\u30A1-\u30F6]*" maxlength="10"><br>
-        メールアドレス<input type="text" maxlength="100"><br>
-        パスワード<input type="password" maxlength="10"><br>
-        性別<input type="radio">男<input type="radio">女<br>
-        郵便番号<input type="text" maxlength="7"><br>
-        住所（都道府県）<br>
-        住所（市区町村）<input type="password" maxlength="10"><br>
-        住所（番地）<input type="password" maxlength="100"><br>
-        アカウント権限<br>
+            <form>
+                <div>名前（姓）<input type="text" pattern="[\u4E00-\u9FFF\u3040-\u309Fー]*" maxlength="10"></div><br>
+                <div>名前（名）<input type="text" pattern="[\u4E00-\u9FFF\u3040-\u309Fー]*" maxlength="10"></div><br>
+                <div>カナ（姓）<input type="text" pattern="[\u30A1-\u30FF]*" maxlength="10"></div><br>
+                <div>カナ（名）<input type="text" pattern="[\u30A1-\u30FF]*" maxlength="10"></div><br>
+                <div>メールアドレス<input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" maxlength="100"></div><br>
+                <div>パスワード<input type="password" pattern="^[a-zA-Z0-9]+$" maxlength="10"></div><br>
+                <div>性別<input type="radio">男<input type="radio">女</div><br>
+                <div>郵便番号<input type="number" maxlength="7"></div><br>
+                <div>住所（都道府県）</div><br>
+                <div>住所（市区町村）<input type="text" maxlength="10"></div><br>
+                <div>住所（番地）<input type="text" maxlength="100"></div><br>
+                <div>アカウント権限</div><br>
+                <input type="submit" value="確認する">
+            </form>
+        </div>
 
 
     </main>
