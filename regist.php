@@ -126,7 +126,7 @@
                     </select>
                 </div><br>
 
-                <input type="submit" class="submit" value="確認する" >
+                <input type="submit" class="submit" value="確認する">
             </form>
         </div>
 
