@@ -23,39 +23,79 @@ header ul li {
 }
 
 h1 {
-    padding-left: 80px;  
+    padding-left: 80px;
     font-size: 20px;
 }
-
-
 
 main {
     /* floatを解除 */
     clear: both;
+    width: 100%;
 }
-
 
 .main-container {
-    height: 1000px;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    height: 850px;
 }
 
-form{
+form {
     font-size: 20px;
 }
 
 form div {
-    padding: 2px;
+    padding-right: 2px;
 }
 
+.text {
+    border: 3px solid black;
+    padding: 4px;
+    float: right;
+    margin-left: 40px;
+}
 
+span.radio{
+    display: inline-block;
+    margin-left: 150px;
+}
 
+span.A{
+    margin-left: 80px;
+}
 
+.zip{
+    border: 3px solid black;
+    padding: 4px;
+    width: 110px;
+    margin-left: 115px;
+}
 
+.dropdown {
+    border: 3px solid black;
+    padding: 4px;
+    width: 110px;
+    margin-left: 35px;
 
+}
 
+.privilege{
+    border: 3px solid black;
+    padding: 4px;
+    width: 110px;
+    margin-left: 53px;
 
+}
 
-
+.submit{
+    display: block;
+    margin: 0 auto;
+    font-size: 20px;
+    border: 1px solid black;
+    margin-top:20px;
+    padding: 10px 95px;
+    }
 
 footer {
     float: left;
