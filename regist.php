@@ -47,7 +47,7 @@
                 </div><br>
 
                 <div><label>パスワード</label>
-                    <input type="password" class="text" size="40" pattern="^[a-zA-Z0-9]+$" maxlength="10">
+                    <input type="text" class="text" size="40" pattern="^[a-zA-Z0-9]+$" maxlength="10">
                 </div><br>
 
                 <div><label>性別</label>
@@ -126,12 +126,12 @@
                     </select>
                 </div><br>
 
-                <input type="submit" class="submit" value="確認する">
+                <input type="submit" class="submit" value="確認する" >
             </form>
         </div>
 
     </main>
-    
+
     <footer>
         Copyright D.I.works| D.I.blog is the one which provides A to Z about programming
     </footer>
