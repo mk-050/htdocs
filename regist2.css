@@ -38,16 +38,62 @@ main {
     margin: 0 auto;
     height: 850px;
 }
+
 .account{
     margin-left:80px;
 
 }
 
-form {
+.conform{
+    display: inline-block;
+    margin-right:90px;
+
+}
+
+.conform2{
+    display: inline-block;
+    margin-right:55px;
+
+}
+
+.conform3{
+    display: inline-block;
+    margin-right:95px;
+
+}
+
+.conform4{
+    display: inline-block;
+    margin-right:155px;
+
+}
+.conform5{
+    display: inline-block;
+    margin-right:115px;
+
+}
+.conform6{
+    display: inline-block;
+    margin-right:35px;
+
+}
+.conform7{
+    display: inline-block;
+    margin-right:73px;
+
+}
+
+.conform8{
+    display: inline-block;
+    margin-right:50px;
+
+}
+
+.accountA {
     font-size: 20px;
 }
 
-form div {
+.accountA div {
     padding-right: 2px;
 }
 
