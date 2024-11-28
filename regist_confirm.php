@@ -105,29 +105,39 @@
 
                     </div><br>
                 </div>
+                <div style="display:inline-flex">
+                    <form method="post" action="regist.php">
+                        <input type="submit" class="submit" value="前に戻る">
+                        <input type="hidden" value="<?php echo $_POST['familyName']; ?>" name="familyName">
+                        <input type="hidden" value="<?php echo $_POST['givenName']; ?>" name="givenName">
+                        <input type="hidden" value="<?php echo $_POST['familyName_kana']; ?>" name="familyName_kana">
+                        <input type="hidden" value="<?php echo $_POST['givenName_kana']; ?>" name="givenName_kana">
+                        <input type="hidden" value="<?php echo $_POST['mail']; ?>" name="mail">
+                        <input type="hidden" value="<?php echo $_POST['password']; ?>" name="password">
+                        <input type="hidden" value="<?php echo $_POST['radio']; ?>" name="radio">
+                        <input type="hidden" value="<?php echo $_POST['postalCode']; ?>" name="postalCode">
+                        <input type="hidden" value="<?php echo $_POST['prefecture']; ?>" name="prefecture">
+                        <input type="hidden" value="<?php echo $_POST['address_1']; ?>" name="address_1">
+                        <input type="hidden" value="<?php echo $_POST['address_2']; ?>" name="address_2">
+                        <input type="hidden" value="<?php echo $_POST['privilege']; ?>" name="privilege">
+                    </form>
 
-
-
-
-                <form method="post" action="regist.php">
-                    <input type="submit" class="submit" value="前に戻る">
-                    <input type="hidden" value="<?php echo $_POST['familyName']; ?>" name="familyName">
-                    <input type="hidden" value="<?php echo $_POST['givenName']; ?>" name="givenName">
-                    <input type="hidden" value="<?php echo $_POST['familyName_kana']; ?>" name="familyName_kana">
-                    <input type="hidden" value="<?php echo $_POST['givenName_kana']; ?>" name="givenName_kana">
-                    <input type="hidden" value="<?php echo $_POST['mail']; ?>" name="mail">
-                    <input type="hidden" value="<?php echo $_POST['password']; ?>" name="password">
-                    <input type="hidden" value="<?php echo $_POST['radio']; ?>" name="radio">
-                    <input type="hidden" value="<?php echo $_POST['postalCode']; ?>" name="postalCode">
-                    <input type="hidden" value="<?php echo $_POST['prefecture']; ?>" name="prefecture">
-                    <input type="hidden" value="<?php echo $_POST['address_1']; ?>" name="address_1">
-                    <input type="hidden" value="<?php echo $_POST['address_2']; ?>" name="address_2">
-                    <input type="hidden" value="<?php echo $_POST['privilege']; ?>" name="privilege">
-                </form>
-
-                <form method="post" action="regist_confirm.php">
-                    <input type="submit" class="submit" value="登録する">
-                </form>
+                    <form method="post" action="regist_complete.php">
+                        <input type="submit" class="submit" value="登録する">
+                        <input type="hidden" value="<?php echo $_POST['familyName']; ?>" name="familyName">
+                        <input type="hidden" value="<?php echo $_POST['givenName']; ?>" name="givenName">
+                        <input type="hidden" value="<?php echo $_POST['familyName_kana']; ?>" name="familyName_kana">
+                        <input type="hidden" value="<?php echo $_POST['givenName_kana']; ?>" name="givenName_kana">
+                        <input type="hidden" value="<?php echo $_POST['mail']; ?>" name="mail">
+                        <input type="hidden" value="<?php echo $_POST['password']; ?>" name="password">
+                        <input type="hidden" value="<?php echo $_POST['radio']; ?>" name="radio">
+                        <input type="hidden" value="<?php echo $_POST['postalCode']; ?>" name="postalCode">
+                        <input type="hidden" value="<?php echo $_POST['prefecture']; ?>" name="prefecture">
+                        <input type="hidden" value="<?php echo $_POST['address_1']; ?>" name="address_1">
+                        <input type="hidden" value="<?php echo $_POST['address_2']; ?>" name="address_2">
+                        <input type="hidden" value="<?php echo $_POST['privilege']; ?>" name="privilege">
+                    </form>
+                </div>
 
             </div>
         </div>
