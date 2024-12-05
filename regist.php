@@ -64,9 +64,9 @@
 
                 <div><label>性別</label>
                     <span class="radio">
-                        <label><input type="radio" name="radio" value="男" checked <?php if (!empty($_POST['radio']) && $_POST['radio'] == "男") {
+                        <label><input type="radio" name="radio" value="0" checked <?php if (!empty($_POST['radio']) && $_POST['radio'] == "0") {
                                                                                         echo 'checked';
-                                                                                    } ?>>男</label><span class="A"><label><input type="radio" name="radio" value="女" <?php if (!empty($_POST['radio']) && $_POST['radio'] == "女") {
+                                                                                    } ?>>男</label><span class="A"><label><input type="radio" name="radio" value="1" <?php if (!empty($_POST['radio']) && $_POST['radio'] == "1") {
                                                                                                                                                                         echo 'checked';
                                                                                                                                                                     } ?>>女</span></label></span>
                 </div><br>
@@ -239,10 +239,10 @@
 
                 <div><label>アカウント権限</label>
                     <select class="privilege" name="privilege">
-                        <option value="一般" selected <?php if (!empty($_POST['privilege']) && $_POST['privilege'] == "一般") {
+                        <option value="0" selected <?php if (!empty($_POST['privilege']) && $_POST['privilege'] == "0") {
                                                         echo 'selected';
                                                     } ?>>一般</option>
-                        <option value="管理者" <?php if (!empty($_POST['privilege']) && $_POST['privilege'] == "管理者") {
+                        <option value="1" <?php if (!empty($_POST['privilege']) && $_POST['privilege'] == "1") {
                                                 echo 'selected';
                                             } ?>>管理者</option>
                     </select>

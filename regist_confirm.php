@@ -49,7 +49,13 @@
                     </div><br>
 
                     <div><label class="conform3">パスワード</label>
-                        <?php echo $_POST['password']; ?>
+                        <?php if (!empty($_POST['password'])) {
+                            $i = 1;
+                            while ($i <= strlen($_POST['password'])) {
+                                echo "●";
+                                $i++;
+                            }
+                        } ?>
                     </div><br>
 
                     <div><label class="conform4">性別</label>
@@ -59,8 +65,11 @@
                             //ラジオボタンで選択された値を受け取る
                             $radio = $_POST['radio'];
 
-                            //受け取った値を画面に出力
-                            echo $radio;
+                            if ($radio == "0") {
+                                echo "男";
+                            } elseif ($radio == "1") {
+                                echo "女";
+                            }
                         } ?>
                     </div><br>
 
@@ -99,8 +108,11 @@
                             //ラジオボタンで選択された値を受け取る
                             $privilege = $_POST['privilege'];
 
-                            //受け取った値を画面に出力
-                            echo $privilege;
+                            if ($privilege == "0") {
+                                echo "一般";
+                            } elseif ($privilege == "1") {
+                                echo "管理者";
+                            }
                         } ?>
 
                     </div><br>
