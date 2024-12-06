@@ -136,6 +136,8 @@
 
                     <form method="post" action="regist_complete.php">
                         <input type="submit" class="submit" value="登録する">
+                        <input type="hidden" value="<?php echo $_POST['']; ?>" name="">
+
                         <input type="hidden" value="<?php echo $_POST['familyName']; ?>" name="familyName">
                         <input type="hidden" value="<?php echo $_POST['givenName']; ?>" name="givenName">
                         <input type="hidden" value="<?php echo $_POST['familyName_kana']; ?>" name="familyName_kana">
@@ -148,6 +150,10 @@
                         <input type="hidden" value="<?php echo $_POST['address_1']; ?>" name="address_1">
                         <input type="hidden" value="<?php echo $_POST['address_2']; ?>" name="address_2">
                         <input type="hidden" value="<?php echo $_POST['privilege']; ?>" name="privilege">
+
+                        <input type="hidden" value="<?php echo $_POST['']; ?>" name="">
+                        <input type="hidden" value="<?php echo $_POST['']; ?>" name="">
+                        <input type="hidden" value="<?php echo $_POST['']; ?>" name="">
                     </form>
                 </div>
 

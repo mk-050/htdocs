@@ -36,22 +36,23 @@ main {
 }
 
 form {
+    margin-top: 130px;
     display: inline-block;
 }
 
-.complete{
-    margin: 0 auto;
+.complete {
     font-size: 35px;
+    font-weight: bolder;
 }
 
-.submit{
+.submit {
     display: block;
     margin: 0 auto;
     font-size: 20px;
     border: 1px solid black;
-    margin-top:665px;
+    margin-top: 535px;
     padding: 10px 95px;
-    }
+}
 
 footer {
     float: left;
