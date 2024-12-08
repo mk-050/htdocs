@@ -98,6 +98,11 @@ span.A{
     padding: 10px 95px;
     }
 
+    .error{
+        display: inline-block;
+        color: red;
+    }
+
 footer {
     float: left;
     width: 100%;
