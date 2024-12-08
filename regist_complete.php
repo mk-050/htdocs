@@ -2,7 +2,7 @@
 mb_internal_encoding("UTF-8");
 
 try {
-    $pdo = new PDO("mysql:dbname=lesson01;host=localhost;", "mkuser", "");
+    $pdo = new PDO("mysql:dbname=lesson01;host=localhost;", "mkuser", "mysql");
 
     $pdo->exec(
         "insert into account(family_name,last_name,family_name_kana,last_name_kana,mail,password,gender,postal_code,prefecture,address_1,address_2,authority)
@@ -28,7 +28,7 @@ values('" . $_POST['familyName'] . "','" . $_POST['givenName'] . "','" . $_POST[
 
 <body>
     <header>
-        
+
         <ul>
             <li>トップ</li>
             <li>プロフィール</li>
