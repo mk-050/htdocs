@@ -22,6 +22,11 @@ header ul li {
     font-size: 25px;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
 h1 {
     padding-left: 80px;
     font-size: 20px;
@@ -57,16 +62,16 @@ form div {
     margin-left: 40px;
 }
 
-span.radio{
+span.radio {
     display: inline-block;
     margin-left: 150px;
 }
 
-span.A{
+span.A {
     margin-left: 80px;
 }
 
-.zip{
+.zip {
     border: 3px solid black;
     padding: 4px;
     width: 110px;
@@ -81,7 +86,7 @@ span.A{
 
 }
 
-.privilege{
+.privilege {
     border: 3px solid black;
     padding: 4px;
     width: 110px;
@@ -89,19 +94,19 @@ span.A{
 
 }
 
-.submit{
+.submit {
     display: block;
     margin: 0 auto;
     font-size: 20px;
     border: 1px solid black;
-    margin-top:20px;
+    margin-top: 20px;
     padding: 10px 95px;
-    }
+}
 
-    .error{
-        display: inline-block;
-        color: red;
-    }
+.error {
+    display: inline-block;
+    color: red;
+}
 
 footer {
     float: left;

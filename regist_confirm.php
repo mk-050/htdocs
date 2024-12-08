@@ -4,13 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <title>account</title>
-    <link rel="stylesheet" type="text/css" href="regist2.css"/>
+    <link rel="stylesheet" type="text/css" href="regist2.css" />
 </head>
 
 <body>
     <header>
         <ul>
-            <li>トップ</li>
+            <li class="a">
+                <a href="http://localhost/regist/index.html">トップ</a>
+            </li>
             <li>プロフィール</li>
             <li>D.I.Blogについて</li>
             <li>登録フォーム</li>

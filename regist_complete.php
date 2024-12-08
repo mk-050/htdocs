@@ -1,13 +1,20 @@
 <?php
 mb_internal_encoding("UTF-8");
 
-$pdo = new PDO("mysql:dbname=lesson01;host=localhost;", "mkuser", "mysql");
+try {
+    $pdo = new PDO("mysql:dbname=lesson01;host=localhost;", "mkuser", "");
 
-$pdo->exec(
-    "insert into account(family_name,last_name,family_name_kana,last_name_kana,mail,password,gender,postal_code,prefecture,address_1,address_2,authority)
+    $pdo->exec(
+        "insert into account(family_name,last_name,family_name_kana,last_name_kana,mail,password,gender,postal_code,prefecture,address_1,address_2,authority)
 values('" . $_POST['familyName'] . "','" . $_POST['givenName'] . "','" . $_POST['familyName_kana'] . "','" . $_POST['givenName_kana'] . "','" . $_POST['mail'] . "','" . password_hash($_POST['password'], PASSWORD_DEFAULT) . "','" . $_POST['radio'] . "','" . $_POST['postalCode'] . "','" . $_POST['prefecture'] . "','" . $_POST['address_1'] . "','" . $_POST['address_2'] . "','" . $_POST['privilege'] . "');"
+    );
+    //データベース切断
+    $pdo = null;
+} catch (PDOException $e) {
+    header('Location:http://localhost/regist/regist_error.php');
+    exit;
+}
 
-);
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +23,7 @@ values('" . $_POST['familyName'] . "','" . $_POST['givenName'] . "','" . $_POST[
 <head>
     <meta charset="UTF-8">
     <title>account</title>
-    <link rel="stylesheet" type="text/css" href="regist3.css"/>
+    <link rel="stylesheet" type="text/css" href="regist3.css" />
 </head>
 
 <body>

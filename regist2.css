@@ -21,6 +21,11 @@ header ul li {
     font-size: 25px;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
 h1 {
     padding-left: 80px;
     font-size: 20px;
@@ -39,45 +44,48 @@ main {
     height: 850px;
 }
 
-.account{
-    margin-left:80px;
+.account {
+    margin-left: 80px;
 }
 
-.conform{
+.conform {
     display: inline-block;
-    margin-right:90px;
+    margin-right: 90px;
 }
 
-.conform2{
+.conform2 {
     display: inline-block;
-    margin-right:55px;
+    margin-right: 55px;
 }
 
-.conform3{
+.conform3 {
     display: inline-block;
-   margin-right:95px;
+    margin-right: 95px;
 }
 
-.conform4{
+.conform4 {
     display: inline-block;
-    margin-right:155px;
-}
-.conform5{
-    display: inline-block;
-    margin-right:115px;
-}
-.conform6{
-    display: inline-block;
-    margin-right:35px;
-}
-.conform7{
-    display: inline-block;
-    margin-right:73px;
+    margin-right: 155px;
 }
 
-.conform8{
+.conform5 {
     display: inline-block;
-    margin-right:50px;
+    margin-right: 115px;
+}
+
+.conform6 {
+    display: inline-block;
+    margin-right: 35px;
+}
+
+.conform7 {
+    display: inline-block;
+    margin-right: 73px;
+}
+
+.conform8 {
+    display: inline-block;
+    margin-right: 50px;
 }
 
 .accountA {
@@ -88,15 +96,15 @@ main {
     padding-right: 2px;
 }
 
-.submit{
+.submit {
     display: inline-block;
     margin: 0 auto;
     font-size: 20px;
     border: 1px solid black;
-    margin-top:20px;
+    margin-top: 20px;
     padding: 10px 95px;
     margin-right: 60px;
-    }
+}
 
 footer {
     float: left;

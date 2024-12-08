@@ -46,6 +46,13 @@ form {
     margin-left: 25px;
 }
 
+.error {
+    font-size: 35px;
+    font-weight: bolder;
+    margin-left: 25px;
+    color: red;
+}
+
 .submit {
     display: block;
     margin: 0 auto;
