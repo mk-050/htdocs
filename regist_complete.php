@@ -28,6 +28,7 @@ values('" . $_POST['familyName'] . "','" . $_POST['givenName'] . "','" . $_POST[
 
 <body>
     <header>
+        
         <ul>
             <li>トップ</li>
             <li>プロフィール</li>

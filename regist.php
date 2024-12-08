@@ -10,66 +10,55 @@
         function check() {
 
             if (form.familyName.value == "") {
-
                 document.getElementById("num1").innerHTML = "名前（姓）が未入力です。";
                 return false;
-
             }
 
             if (form.givenName.value == "") {
                 document.getElementById("num2").innerHTML = "名前（名）が未入力です。";
                 return false;
-
             }
             if (form.familyName_kana.value == "") {
                 document.getElementById("num3").innerHTML = "カナ（姓）が未入力です。";
                 return false;
-
             }
             if (form.givenName_kana.value == "") {
                 document.getElementById("num4").innerHTML = "カナ（名）が未入力です。";
                 return false;
-
             }
             if (form.mail.value == "") {
                 document.getElementById("num5").innerHTML = "メールアドレスが未入力です。";
                 return false;
-
             }
             if (form.password.value == "") {
                 document.getElementById("num6").innerHTML = "パスワードが未入力です。";
                 return false;
-
             }
 
             if (form.postalCode.value == "") {
                 document.getElementById("num7").innerHTML = "郵便番号が未入力です。";
                 return false;
-
             }
             if (form.prefecture.value == "") {
                 document.getElementById("num8").innerHTML = "住所（都道府県）が未選択です。";
                 return false;
-
             }
             if (form.address_1.value == "") {
                 document.getElementById("num9").innerHTML = "住所（市区町村）が未入力です。";
                 return false;
-
             }
             if (form.address_2.value == "") {
                 document.getElementById("num10").innerHTML = "住所（番地）が未入力です。";
                 return false;
-
             }
             return true;
         }
     </script>
+
 </head>
-
-
 <body>
     <header>
+
         <ul>
             <li class="a">
                 <a href="http://localhost/regist/index.html">トップ</a>
@@ -110,7 +99,6 @@
                     <input type="text" class="text" size="40" pattern="[\u30A1-\u30FF]*" maxlength="10" name="familyName_kana" value="<?php if (!empty($_POST['familyName_kana'])) {
                                                                                                                                             echo $_POST['familyName_kana'];
                                                                                                                                         } ?>">
-
                 </div>
                 <div id="num3" class="error"></div>
                 <br>
