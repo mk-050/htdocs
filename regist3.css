@@ -22,6 +22,11 @@ header ul li {
     font-size: 25px;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
 h1 {
     padding-left: 80px;
     font-size: 20px;
