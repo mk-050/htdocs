@@ -11,51 +11,72 @@
 
             if (form.familyName.value == "") {
                 document.getElementById("num1").innerHTML = "名前（姓）が未入力です。";
-                return false;
+
+            } else {
+                document.getElementById("num1").innerHTML = " ";
             }
 
             if (form.givenName.value == "") {
                 document.getElementById("num2").innerHTML = "名前（名）が未入力です。";
-                return false;
+
+            } else {
+                document.getElementById("num2").innerHTML = " ";
             }
             if (form.familyName_kana.value == "") {
                 document.getElementById("num3").innerHTML = "カナ（姓）が未入力です。";
-                return false;
+
+            } else {
+                document.getElementById("num3").innerHTML = " ";
             }
             if (form.givenName_kana.value == "") {
                 document.getElementById("num4").innerHTML = "カナ（名）が未入力です。";
-                return false;
+
+            } else {
+                document.getElementById("num4").innerHTML = " ";
             }
             if (form.mail.value == "") {
                 document.getElementById("num5").innerHTML = "メールアドレスが未入力です。";
-                return false;
+
+            } else {
+                document.getElementById("num5").innerHTML = " ";
             }
             if (form.password.value == "") {
                 document.getElementById("num6").innerHTML = "パスワードが未入力です。";
-                return false;
+            } else {
+                document.getElementById("num6").innerHTML = " ";
             }
 
             if (form.postalCode.value == "") {
                 document.getElementById("num7").innerHTML = "郵便番号が未入力です。";
-                return false;
+            } else {
+                document.getElementById("num7").innerHTML = " ";
             }
             if (form.prefecture.value == "") {
                 document.getElementById("num8").innerHTML = "住所（都道府県）が未選択です。";
-                return false;
+            } else {
+                document.getElementById("num8").innerHTML = " ";
             }
             if (form.address_1.value == "") {
                 document.getElementById("num9").innerHTML = "住所（市区町村）が未入力です。";
-                return false;
+            } else {
+                document.getElementById("num9").innerHTML = " ";
             }
             if (form.address_2.value == "") {
                 document.getElementById("num10").innerHTML = "住所（番地）が未入力です。";
-                return false;
+            } else {
+                document.getElementById("num10").innerHTML = " ";
             }
-            return true;
+
+            if (form.familyName.value == "" || form.givenName.value == "" || form.familyName_kana.value == "" || form.givenName_kana.value == "" || form.mail.value == "" || form.password.value == "" || form.postalCode.value == "" || form.prefecture.value == "" || form.address_1.value == "" || form.address_2.value == "") {
+                return false;
+            } else {
+                return true;
+            }
         }
     </script>
 
 </head>
+
 <body>
     <header>
 
@@ -112,9 +133,9 @@
                 <br>
 
                 <div><label>メールアドレス</label>
-                    <input type="email" class="text" size="40" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" maxlength="100" name="mail" value="<?php if (!empty($_POST['mail'])) {
-                                                                                                                                                        echo $_POST['mail'];
-                                                                                                                                                    } ?>">
+                    <input type="email" class="text" size="40" pattern="[^!#$%&\*,<>~?]+" maxlength="100" name="mail" value="<?php if (!empty($_POST['mail'])) {
+                                                                                                                                    echo $_POST['mail'];
+                                                                                                                                } ?>">
                 </div>
                 <div id="num5" class="error"></div>
                 <br>
@@ -295,17 +316,17 @@
                 <br>
 
                 <div><label>住所（市区町村）</label>
-                    <input type="text" class="text" size="40" maxlength="10" name="address_1" value="<?php if (!empty($_POST['address_1'])) {
-                                                                                                            echo $_POST['address_1'];
-                                                                                                        } ?>">
+                    <input type="text" class="text" size="40" pattern="[^a-zA-Z!#$%&\*.,<>@~?]+" maxlength="10" name="address_1" value="<?php if (!empty($_POST['address_1'])) {
+                                                                                                                                            echo $_POST['address_1'];
+                                                                                                                                        } ?>">
                 </div>
                 <div id="num9" class="error"></div>
                 <br>
 
                 <div><label>住所（番地）</label>
-                    <input type="text" class="text" size="40" maxlength="100" name="address_2" value="<?php if (!empty($_POST['address_2'])) {
-                                                                                                            echo $_POST['address_2'];
-                                                                                                        } ?>">
+                    <input type="text" class="text" size="40" pattern="[^a-zA-Z!#$%&\*.,<>@~?]+" maxlength="100" name="address_2" value="<?php if (!empty($_POST['address_2'])) {
+                                                                                                                                                echo $_POST['address_2'];
+                                                                                                                                            } ?>">
                 </div>
                 <div id="num10" class="error"></div>
                 <br>
