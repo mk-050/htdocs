@@ -20,6 +20,7 @@
             <li>問い合わせ</li>
             <li>その他</li>
             <li>アカウント登録</li>
+            <li>アカウント一覧</li>
         </ul>
 
     </header>
@@ -120,6 +121,7 @@
                         } ?>
 
                     </div><br>
+                    <?php $_POST['delete_flag'] = 1; ?>
                 </div>
                 <div style="display:inline-flex">
                     <form method="post" action="regist.php">
@@ -152,6 +154,7 @@
                         <input type="hidden" value="<?php echo $_POST['address_1']; ?>" name="address_1">
                         <input type="hidden" value="<?php echo $_POST['address_2']; ?>" name="address_2">
                         <input type="hidden" value="<?php echo $_POST['privilege']; ?>" name="privilege">
+                        <input type="hidden" value="<?php echo $_POST['delete_flag']; ?>" name="delete_flag">
                     </form>
                 </div>
 
