@@ -57,7 +57,6 @@
                 $mail = $row['mail'];
 
                 $param = $row['gender'];
-
                 if ($param == "0") {
                     $gender = "男";
                 } elseif ($param == "1") {
@@ -65,7 +64,6 @@
                 }
 
                 $param1 = $row['authority'];
-
                 if ($param1 == "0") {
                     $privilege = "一般";
                 } elseif ($param1 == "1") {
@@ -73,7 +71,6 @@
                 }
 
                 $param2 = $row['delete_flag'];
-
                 if ($param2 == "0") {
                     $delete_flag = "有効";
                 } elseif ($param2 == "1") {
@@ -81,11 +78,8 @@
                 }
 
                 $registered_time = $row['registered_time'];
-
                 $registered_time = new DateTime($registered_time);
                 $formatted_R_time = $registered_time->format('Y/m/d');
-
-
                 $update_time = $row['update_time'];
                 $update_time = new DateTime($update_time);
                 $formatted_U_time = $update_time->format('Y/m/d');
