@@ -124,8 +124,9 @@
                     <?php $_POST['delete_flag'] = 1; ?>
                 </div>
 
-                <form method="post" action="">
+                <form method="post" action="http://localhost/regist/delete_confirm.php">
                     <input type="submit" class="submit" value="確認する">
+                    <input type="hidden" value="<?php echo $_POST['id']; ?>" name="id">
                 </form>
             </div>
 
