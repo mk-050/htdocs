@@ -1,0 +1,119 @@
+header {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 80px;
+    background-color: black;
+}
+
+header ul {
+    /* ul要素をまとめて左寄せ */
+    float: left;
+    list-style: none;
+    line-height: 50px;
+}
+
+header ul li {
+    /* list一つずつ左寄せ */
+    float: left;
+    padding-right: 30px;
+    color: white;
+    font-size: 25px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+h1 {
+    padding-left: 80px;
+    font-size: 20px;
+}
+
+main {
+    /* floatを解除 */
+    clear: both;
+    width: 100%;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    height: 850px;
+}
+
+.account {
+    margin-left: 80px;
+}
+
+.conform {
+    display: inline-block;
+    margin-right: 90px;
+}
+
+.conform2 {
+    display: inline-block;
+    margin-right: 55px;
+}
+
+.conform3 {
+    display: inline-block;
+    margin-right: 95px;
+}
+
+.conform4 {
+    display: inline-block;
+    margin-right: 155px;
+}
+
+.conform5 {
+    display: inline-block;
+    margin-right: 115px;
+}
+
+.conform6 {
+    display: inline-block;
+    margin-right: 35px;
+}
+
+.conform7 {
+    display: inline-block;
+    margin-right: 73px;
+}
+
+.conform8 {
+    display: inline-block;
+    margin-right: 50px;
+}
+
+.accountA {
+    font-size: 20px;
+}
+
+.accountA div {
+    padding-right: 2px;
+}
+
+.submit {
+    display: inline-block;
+    margin: 0 auto;
+    font-size: 20px;
+    border: 1px solid black;
+    margin-top: 20px;
+    padding: 10px 95px;
+    margin-left: 130px;
+}
+
+footer {
+    float: left;
+    width: 100%;
+    height: 80px;
+    background-color: black;
+    /* footer内の文字を装飾する */
+    text-align: center;
+    font-size: 25px;
+    line-height: 80px;
+    color: white;
+}

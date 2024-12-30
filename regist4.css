@@ -40,9 +40,8 @@ main {
     height: 850px;
 }
 
-form {
-    display: inline-block;
-    margin-top: 130px;
+.table form .submit{
+    width:100%
 }
 
 .table {

@@ -36,7 +36,7 @@
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // SQLクエリの準備と実行
-            $query = "SELECT id,family_name,last_name,family_name_kana,last_name_kana,mail,gender,authority,delete_flag,registered_time,update_time FROM account ORDER BY id DESC";
+            $query = "SELECT id,family_name,last_name,family_name_kana,last_name_kana,mail,password,gender,postal_code,prefecture,address_1,address_2,authority,delete_flag,registered_time,update_time FROM account ORDER BY id DESC";
             $stmt = $pdo->prepare($query);
             $stmt->execute();
 
@@ -95,8 +95,39 @@
                 echo "<td class='center'>" . htmlspecialchars($delete_flag) . "</td>";
                 echo "<td class='center'>" . htmlspecialchars($formatted_R_time) . "</td>";
                 echo "<td class='center'>" . htmlspecialchars($formatted_U_time) . "</td>";
-                echo "<td>" . "<input type='button' style='width:100%' onclick=location.href='http://localhost/regist/delete.php' value='更新'>" . "</td>";
-                echo "<td>" . "<input type='button' style='width:100%' onclick=location.href='http://localhost/regist/update.php' value='削除'>" . "</td>";
+
+
+                echo "<td>" . "<form action='http://localhost/regist/update.php' method='post'value='更新'>" . '<input type="submit" class="submit" value="更新する">' . "</td>";
+                echo '<input type="hidden" value="$row[family_name]" name="familyName">';
+                echo '<input type="hidden" value="$last_name" name="givenName">';
+                echo '<input type="hidden" value="$family_name_kana" name="familyName_kana">';
+                echo '<input type="hidden" value="$last_name_kana" name="givenName_kana">';
+                echo '<input type="hidden" value="$mail" name="mail">';
+                echo '<input type="hidden" value="" name="password">';
+                echo '<input type="hidden" value="$gender" name="radio">';
+                echo '<input type="hidden" value="" name="postalCode">';
+                echo '<input type="hidden" value="" name="prefecture">';
+                echo '<input type="hidden" value="" name="address_1">';
+                echo '<input type="hidden" value="" name="address_2">';
+                echo '<input type="hidden" value="" name="privilege">';
+
+                echo "</form>";
+
+                echo "<td>" . "<form action='http://localhost/regist/delete.php' method='post'>" . '<input type="submit" class="submit" value="削除する">' . '</td>';
+                echo '<input type="hidden" value=' . $row["family_name"] . ' name="familyName">';
+                echo '<input type="hidden" value=' . $row["last_name"] . ' name="givenName">';
+                echo '<input type="hidden" value=' . $row["family_name_kana"] . ' name="familyName_kana">';
+                echo '<input type="hidden" value=' . $row["last_name_kana"] . ' name="givenName_kana">';
+                echo '<input type="hidden" value=' . $row["mail"] . ' name="mail">';
+                echo '<input type="hidden" value=' . $row["password"] . ' name="password">';
+                echo '<input type="hidden" value=' . $row["gender"] . ' name="radio">';
+                echo '<input type="hidden" value=' . $row["postal_code"] . ' name="postalCode">';
+                echo '<input type="hidden" value=' . $row["prefecture"] . ' name="prefecture">';
+                echo '<input type="hidden" value=' . $row["address_1"] . ' name="address_1">';
+                echo '<input type="hidden" value=' . $row["address_2"] . ' name="address_2">';
+                echo '<input type="hidden" value=' . $row["authority"] . ' name="privilege">';
+
+                echo "</form>";
             }
 
             // テーブルの終了
