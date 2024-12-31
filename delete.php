@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>account</title>
-    <link rel="stylesheet" type="text/css" href="regist5.css" />
+    <link rel="stylesheet" type="text/css" href="delete.css" />
 </head>
 
 <body>

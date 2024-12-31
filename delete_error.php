@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>account</title>
-    <link rel="stylesheet" type="text/css" href="regist_error.css" />
+    <link rel="stylesheet" type="text/css" href="regist3.css" />
 </head>
 
 <body>
@@ -26,7 +26,7 @@
         <form action="http://localhost/regist/index.html">
 
             <div class="error">
-                <p>エラーが発生したためアカウント登録できません。</p>
+                <p>エラーが発生したためアカウント削除できません。</p>
             </div>
 
             <div>

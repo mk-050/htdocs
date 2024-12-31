@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>account</title>
-    <link rel="stylesheet" type="text/css" href="regist3.css" />
+    <link rel="stylesheet" type="text/css" href="delete_confirm.css" />
 </head>
 
 <body>
@@ -35,10 +35,9 @@
         </form>
 
         <form method="post" action="delete_complete.php">
-
-
             <input type="submit" class="submit" value="削除する">
             <input type="hidden" value="<?php echo $_POST['id']; ?>" name="id">
+        </form>
     </main>
 
     <footer>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>account</title>
-    <link rel="stylesheet" type="text/css" href="regist2.css" />
+    <link rel="stylesheet" type="text/css" href="regist_confirm.css" />
 </head>
 
 <body>

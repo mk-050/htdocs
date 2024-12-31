@@ -23,7 +23,7 @@ values('" . $_POST['familyName'] . "','" . $_POST['givenName'] . "','" . $_POST[
 <head>
     <meta charset="UTF-8">
     <title>account</title>
-    <link rel="stylesheet" type="text/css" href="regist3.css" />
+    <link rel="stylesheet" type="text/css" href="regist_complete.css" />
 </head>
 
 <body>

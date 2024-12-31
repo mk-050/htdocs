@@ -4,7 +4,7 @@ mb_internal_encoding("UTF-8");
 
 
 try {
-    $pdo = new PDO("mysql:dbname=lesson01;host=localhost;", "mkuser", "mysql");
+    $pdo = new PDO("mysql:dbname=lesson01;host=localhost;", "", "mysql");
 
     $id = $_POST['id'];
 
@@ -14,7 +14,7 @@ try {
     //データベース切断
     $pdo = null;
 } catch (PDOException $e) {
-    header('Location:http://localhost/regist/regist_error.php');
+    header('Location:http://localhost/regist/delete_error.php');
     exit;
 }
 
