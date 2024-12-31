@@ -23,7 +23,7 @@
     </header>
 
     <main>
-        <form action="http://localhost/regist/index.html">
+        <form action="http://localhost/regist/home.html">
 
             <div class="error">
                 <p>エラーが発生したためアカウント登録できません。</p>

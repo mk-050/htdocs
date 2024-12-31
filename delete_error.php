@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>account</title>
-    <link rel="stylesheet" type="text/css" href="regist3.css" />
+    <link rel="stylesheet" type="text/css" href="regist_complete.css" />
 </head>
 
 <body>
@@ -23,7 +23,7 @@
     </header>
 
     <main>
-        <form action="http://localhost/regist/index.html">
+        <form action="http://localhost/regist/home.html">
 
             <div class="error">
                 <p>エラーが発生したためアカウント削除できません。</p>

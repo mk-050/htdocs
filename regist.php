@@ -82,7 +82,7 @@
 
         <ul>
             <li class="a">
-                <a href="http://localhost/regist/index.html">トップ</a>
+                <a href="http://localhost/regist/home.html">トップ</a>
             </li>
             <li>プロフィール</li>
             <li>D.I.Blogについて</li>

@@ -12,7 +12,7 @@
 
         <ul>
             <li class="a">
-                <a href="http://localhost/regist/index.html">トップ</a>
+                <a href="http://localhost/regist/home.html">トップ</a>
             </li>
             <li>プロフィール</li>
             <li>D.I.Blogについて</li>
@@ -127,6 +127,18 @@
                 <form method="post" action="http://localhost/regist/delete_confirm.php">
                     <input type="submit" class="submit" value="確認する">
                     <input type="hidden" value="<?php echo $_POST['id']; ?>" name="id">
+                    <input type="hidden" value="<?php echo $_POST['familyName']; ?>" name="familyName">
+                    <input type="hidden" value="<?php echo $_POST['givenName']; ?>" name="givenName">
+                    <input type="hidden" value="<?php echo $_POST['familyName_kana']; ?>" name="familyName_kana">
+                    <input type="hidden" value="<?php echo $_POST['givenName_kana']; ?>" name="givenName_kana">
+                    <input type="hidden" value="<?php echo $_POST['mail']; ?>" name="mail">
+                    <input type="hidden" value="<?php echo $_POST['password']; ?>" name="password">
+                    <input type="hidden" value="<?php echo $_POST['radio']; ?>" name="radio">
+                    <input type="hidden" value="<?php echo $_POST['postalCode']; ?>" name="postalCode">
+                    <input type="hidden" value="<?php echo $_POST['prefecture']; ?>" name="prefecture">
+                    <input type="hidden" value="<?php echo $_POST['address_1']; ?>" name="address_1">
+                    <input type="hidden" value="<?php echo $_POST['address_2']; ?>" name="address_2">
+                    <input type="hidden" value="<?php echo $_POST['privilege']; ?>" name="privilege">
                 </form>
             </div>
 

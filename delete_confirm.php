@@ -30,8 +30,21 @@
             <p>本当に削除してよろしいですか？</p>
         </div>
 
-        <form action="delete.php">
-            <input type="button" class="submit" onclick="history.back()" value="前に戻る">
+        <form method="post" action="delete.php">
+            <input type="submit" class="submit" value="前に戻る">
+            <input type="hidden" value="<?php echo $_POST['id']; ?>" name="id">
+            <input type="hidden" value="<?php echo $_POST['familyName']; ?>" name="familyName">
+            <input type="hidden" value="<?php echo $_POST['givenName']; ?>" name="givenName">
+            <input type="hidden" value="<?php echo $_POST['familyName_kana']; ?>" name="familyName_kana">
+            <input type="hidden" value="<?php echo $_POST['givenName_kana']; ?>" name="givenName_kana">
+            <input type="hidden" value="<?php echo $_POST['mail']; ?>" name="mail">
+            <input type="hidden" value="<?php echo $_POST['password']; ?>" name="password">
+            <input type="hidden" value="<?php echo $_POST['radio']; ?>" name="radio">
+            <input type="hidden" value="<?php echo $_POST['postalCode']; ?>" name="postalCode">
+            <input type="hidden" value="<?php echo $_POST['prefecture']; ?>" name="prefecture">
+            <input type="hidden" value="<?php echo $_POST['address_1']; ?>" name="address_1">
+            <input type="hidden" value="<?php echo $_POST['address_2']; ?>" name="address_2">
+            <input type="hidden" value="<?php echo $_POST['privilege']; ?>" name="privilege">
         </form>
 
         <form method="post" action="delete_complete.php">

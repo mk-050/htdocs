@@ -26,7 +26,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <title>account</title>
-    <link rel="stylesheet" type="text/css" href="regist3.css" />
+    <link rel="stylesheet" type="text/css" href="regist_complete.css" />
 </head>
 
 <body>
@@ -48,7 +48,7 @@ try {
     <h1>アカウント登録完了画面</h1><br>
 
     <main>
-        <form action="http://localhost/regist/index.html">
+        <form action="http://localhost/regist/home.html">
 
             <div class="complete">
                 <p>削除完了しました</p>
