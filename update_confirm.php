@@ -121,11 +121,11 @@
                         } ?>
 
                     </div><br>
-                    <?php $_POST['delete_flag'] = 1; ?>
                 </div>
                 <div style="display:inline-flex">
-                    <form method="post" action="regist.php">
+                    <form method="post" action="update.php">
                         <input type="submit" class="submit" value="前に戻る">
+                        <input type="hidden" value="<?php echo $_POST['id']; ?>" name="id">
                         <input type="hidden" value="<?php echo $_POST['familyName']; ?>" name="familyName">
                         <input type="hidden" value="<?php echo $_POST['givenName']; ?>" name="givenName">
                         <input type="hidden" value="<?php echo $_POST['familyName_kana']; ?>" name="familyName_kana">
@@ -140,8 +140,9 @@
                         <input type="hidden" value="<?php echo $_POST['privilege']; ?>" name="privilege">
                     </form>
 
-                    <form method="post" action="regist_complete.php">
-                        <input type="submit" class="submit" value="登録する">
+                    <form method="post" action="update_complete.php">
+                        <input type="submit" class="submit" value="更新する">
+                        <input type="hidden" value="<?php echo $_POST['id']; ?>" name="id">
                         <input type="hidden" value="<?php echo $_POST['familyName']; ?>" name="familyName">
                         <input type="hidden" value="<?php echo $_POST['givenName']; ?>" name="givenName">
                         <input type="hidden" value="<?php echo $_POST['familyName_kana']; ?>" name="familyName_kana">

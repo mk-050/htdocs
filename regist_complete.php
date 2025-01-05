@@ -45,7 +45,7 @@ values('" . $_POST['familyName'] . "','" . $_POST['givenName'] . "','" . $_POST[
     <h1>アカウント登録完了画面</h1><br>
 
     <main>
-        <form action="http://localhost/regist/index.html">
+        <form action="http://localhost/regist/home.html">
 
             <div class="complete">
                 <p>登録完了しました</p>

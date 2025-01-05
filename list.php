@@ -96,10 +96,10 @@
                 echo "<td class='center'>" . htmlspecialchars($formatted_R_time) . "</td>";
                 echo "<td class='center'>" . htmlspecialchars($formatted_U_time) . "</td>";
 
-
-                echo "<td>" . "<form action='http://localhost/regist/update.php' method='post'value='更新'>" . '<input type="submit" class="submit" value="更新する">' . "</td>";
+                echo "<td>" . "<form action='http://localhost/regist/update.php' method='post'>" . '<input type="submit" class="submit" value="更新する">' . "</td>";
+                echo '<input type="hidden" value=' . $row["id"] . ' name="id">';
                 echo '<input type="hidden" value=' . $row["family_name"] . ' name="familyName">';
-                echo '<input type="hidden" value=' . $row["last_name"] . 'name="givenName">';
+                echo '<input type="hidden" value=' . $row["last_name"] . ' name="givenName">';
                 echo '<input type="hidden" value=' . $row["family_name_kana"] . ' name="familyName_kana">';
                 echo '<input type="hidden" value=' . $row["last_name_kana"] . ' name="givenName_kana">';
                 echo '<input type="hidden" value=' . $row["mail"] . ' name="mail">';
@@ -109,8 +109,7 @@
                 echo '<input type="hidden" value=' . $row["prefecture"] . ' name="prefecture">';
                 echo '<input type="hidden" value=' . $row["address_1"] . ' name="address_1">';
                 echo '<input type="hidden" value=' . $row["address_2"] . ' name="address_2">';
-                echo '<input type="hidden"value=' . $row["authority"] . ' name="privilege">';
-
+                echo '<input type="hidden" value=' . $row["authority"] . ' name="privilege">';
                 echo "</form>";
 
                 echo "<td>" . "<form action='http://localhost/regist/delete.php' method='post'>" . '<input type="submit" class="submit" value="削除する">' . '</td>';
@@ -127,7 +126,6 @@
                 echo '<input type="hidden" value=' . $row["address_1"] . ' name="address_1">';
                 echo '<input type="hidden" value=' . $row["address_2"] . ' name="address_2">';
                 echo '<input type="hidden" value=' . $row["authority"] . ' name="privilege">';
-
                 echo "</form>";
             }
 

@@ -1,20 +1,17 @@
 <?php
 mb_internal_encoding("UTF-8");
 
-
-
 try {
-    $pdo = new PDO("mysql:dbname=lesson01;host=localhost;", "mkuser", "mysql");
-
-    $id = $_POST['id'];
+    $pdo = new PDO("mysql:dbname=lesson01;host=localhost;", "", "mysql");
 
     $pdo->exec(
-        "update account set delete_flag=0 where id='" . $id . "' "
+        "update account(family_name,last_name,family_name_kana,last_name_kana,mail,password,gender,postal_code,prefecture,address_1,address_2,authority,delete_flag)
+values('" . $_POST['familyName'] . "','" . $_POST['givenName'] . "','" . $_POST['familyName_kana'] . "','" . $_POST['givenName_kana'] . "','" . $_POST['mail'] . "','" . password_hash($_POST['password'], PASSWORD_DEFAULT) . "','" . $_POST['radio'] . "','" . $_POST['postalCode'] . "','" . $_POST['prefecture'] . "','" . $_POST['address_1'] . "','" . $_POST['address_2'] . "','" . $_POST['privilege'] . "','" . $_POST['delete_flag'] . "');"
     );
     //データベース切断
     $pdo = null;
 } catch (PDOException $e) {
-    header('Location:http://localhost/regist/delete_error.php');
+    header('Location:http://localhost/regist/regist_error.php');
     exit;
 }
 
@@ -51,7 +48,7 @@ try {
         <form action="http://localhost/regist/home.html">
 
             <div class="complete">
-                <p>削除完了しました</p>
+                <p>更新完了しました</p>
             </div>
 
             <div>
