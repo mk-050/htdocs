@@ -25,7 +25,7 @@
 
     </header>
 
-    <h1>アカウント登録確認画面</h1><br>
+    <h1>アカウント更新確認画面</h1><br>
 
     <main>
         <div class="main-container">
@@ -155,7 +155,6 @@
                         <input type="hidden" value="<?php echo $_POST['address_1']; ?>" name="address_1">
                         <input type="hidden" value="<?php echo $_POST['address_2']; ?>" name="address_2">
                         <input type="hidden" value="<?php echo $_POST['privilege']; ?>" name="privilege">
-                        <input type="hidden" value="<?php echo $_POST['delete_flag']; ?>" name="delete_flag">
                     </form>
                 </div>
 
