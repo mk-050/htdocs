@@ -40,11 +40,6 @@
             } else {
                 document.getElementById("num5").innerHTML = " ";
             }
-            if (form.password.value == "") {
-                document.getElementById("num6").innerHTML = "パスワードが未入力です。";
-            } else {
-                document.getElementById("num6").innerHTML = " ";
-            }
 
             if (form.postalCode.value == "") {
                 document.getElementById("num7").innerHTML = "郵便番号が未入力です。";
@@ -67,7 +62,7 @@
                 document.getElementById("num10").innerHTML = " ";
             }
 
-            if (form.familyName.value == "" || form.givenName.value == "" || form.familyName_kana.value == "" || form.givenName_kana.value == "" || form.mail.value == "" || form.password.value == "" || form.postalCode.value == "" || form.prefecture.value == "" || form.address_1.value == "" || form.address_2.value == "") {
+            if (form.familyName.value == "" || form.givenName.value == "" || form.familyName_kana.value == "" || form.givenName_kana.value == "" || form.mail.value == "" || form.postalCode.value == "" || form.prefecture.value == "" || form.address_1.value == "" || form.address_2.value == "") {
                 return false;
             } else {
                 return true;
@@ -102,7 +97,7 @@
 
             <form method="post" name="form" action="update_confirm.php" onsubmit="return check()">
                 <input type="hidden" value="<?php echo $_POST['id']; ?>" name="id">
-                
+
                 <div><label>名前（姓）</label>
                     <input type="text" class="text" size="40" pattern="[\u4E00-\u9FFF\u3040-\u309Fー]*" maxlength="10" name="familyName" value="<?php echo $_POST['familyName']; ?>">
                 </div>
@@ -128,19 +123,15 @@
                 <br>
 
                 <div><label>メールアドレス</label>
-                    <input type="email" class="text" size="40" pattern="[^!#$%&\*,<>~?]+" maxlength="100" name="mail" value="<?php echo $_POST['mail']; ?>">
+                    <input type="email" class="text" size="40" maxlength="100" name="mail" value="<?php echo $_POST['mail']; ?>">
                 </div>
                 <div id="num5" class="error"></div>
                 <br>
 
                 <div><label>パスワード</label>
-                    <input type="text" class="text" size="40" pattern="^[a-zA-Z0-9]+$" maxlength="10" name="password" value="<?php if (!empty($_POST['password'])) {
-                                                                                                                                    $i = 1;
-                                                                                                                                    while ($i <= strlen($_POST['password'])) {
-                                                                                                                                        echo "●";
-                                                                                                                                        $i++;
-                                                                                                                                    }
-                                                                                                                                } ?>">
+                    <input type="password" class="text" size="40" maxlength="100" placeholder="※変更をご希望の場合、入力してください" name="password" value="<?php if (!empty($_POST['password'])) {
+                                                                                                                echo $_POST['password'];
+                                                                                                            } ?>">
                 </div>
                 <div id="num6" class="error"></div>
                 <br>

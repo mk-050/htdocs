@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>account</title>
+    <title>List of user accounts</title>
     <link rel="stylesheet" type="text/css" href="list.css" />
 </head>
 
@@ -36,7 +36,7 @@
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // SQLクエリの準備と実行
-            $query = "SELECT id,family_name,last_name,family_name_kana,last_name_kana,mail,password,gender,postal_code,prefecture,address_1,address_2,authority,delete_flag,registered_time,update_time FROM account ORDER BY id DESC";
+            $query = "SELECT id,family_name,last_name,family_name_kana,last_name_kana,mail,gender,postal_code,prefecture,address_1,address_2,authority,delete_flag,registered_time,update_time FROM account ORDER BY id DESC";
             $stmt = $pdo->prepare($query);
             $stmt->execute();
 
@@ -103,7 +103,6 @@
                 echo '<input type="hidden" value=' . $row["family_name_kana"] . ' name="familyName_kana">';
                 echo '<input type="hidden" value=' . $row["last_name_kana"] . ' name="givenName_kana">';
                 echo '<input type="hidden" value=' . $row["mail"] . ' name="mail">';
-                echo '<input type="hidden" value=' . $row["password"] . ' name="password">';
                 echo '<input type="hidden" value=' . $row["gender"] . ' name="radio">';
                 echo '<input type="hidden" value=' . $row["postal_code"] . ' name="postalCode">';
                 echo '<input type="hidden" value=' . $row["prefecture"] . ' name="prefecture">';
@@ -119,7 +118,6 @@
                 echo '<input type="hidden" value=' . $row["family_name_kana"] . ' name="familyName_kana">';
                 echo '<input type="hidden" value=' . $row["last_name_kana"] . ' name="givenName_kana">';
                 echo '<input type="hidden" value=' . $row["mail"] . ' name="mail">';
-                echo '<input type="hidden" value=' . $row["password"] . ' name="password">';
                 echo '<input type="hidden" value=' . $row["gender"] . ' name="radio">';
                 echo '<input type="hidden" value=' . $row["postal_code"] . ' name="postalCode">';
                 echo '<input type="hidden" value=' . $row["prefecture"] . ' name="prefecture">';

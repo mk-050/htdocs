@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>account</title>
+    <title>Registration</title>
     <link rel="stylesheet" type="text/css" href="regist_confirm.css" />
 </head>
 

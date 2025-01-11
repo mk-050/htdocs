@@ -49,6 +49,7 @@ try {
     }
 
     if (!empty($password)) {
+
         $pdo->exec(
             "update account set password='" . password_hash($_POST['password'], PASSWORD_DEFAULT) . "'  where id='" . $id . "' "
         );
@@ -124,7 +125,7 @@ try {
 
     </header>
 
-    <h1>アカウント登録完了画面</h1><br>
+    <h1>アカウント更新完了画面</h1><br>
 
     <main>
         <form action="http://localhost/regist/home.html">
@@ -137,8 +138,6 @@ try {
                 <input type="submit" class="submit" value="TOPページへ戻る">
             </div>
         </form>
-
-
     </main>
 
     <footer>

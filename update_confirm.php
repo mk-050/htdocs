@@ -54,7 +54,9 @@
                     </div><br>
 
                     <div><label class="conform3">パスワード</label>
-                        <?php if (!empty($_POST['password'])) {
+                        <?php if (empty($_POST['password'])) {
+                            echo "※空欄のため、パスワードは更新されません";
+                        } else {
                             $i = 1;
                             while ($i <= strlen($_POST['password'])) {
                                 echo "●";

@@ -63,6 +63,11 @@ main {
     margin-right: 95px;
 }
 
+p{
+    display: inline-block;
+    font-size: 15px;
+}
+
 .conform4 {
     display: inline-block;
     margin-right: 155px;

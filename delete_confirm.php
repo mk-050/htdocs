@@ -43,7 +43,6 @@
                     <input type="hidden" value="<?php echo $_POST['familyName_kana']; ?>" name="familyName_kana">
                     <input type="hidden" value="<?php echo $_POST['givenName_kana']; ?>" name="givenName_kana">
                     <input type="hidden" value="<?php echo $_POST['mail']; ?>" name="mail">
-                    <input type="hidden" value="<?php echo $_POST['password']; ?>" name="password">
                     <input type="hidden" value="<?php echo $_POST['radio']; ?>" name="radio">
                     <input type="hidden" value="<?php echo $_POST['postalCode']; ?>" name="postalCode">
                     <input type="hidden" value="<?php echo $_POST['prefecture']; ?>" name="prefecture">
