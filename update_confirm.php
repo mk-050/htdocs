@@ -50,7 +50,7 @@
                     </div><br>
 
                     <div><label class="conform2">メールアドレス</label>
-                        <?php echo $_POST['mail']; ?>
+                        <span><?php echo $_POST['mail']; ?></span>
                     </div><br>
 
                     <div><label class="conform3">パスワード</label>
@@ -67,14 +67,14 @@
 
                     <div><label class="conform4">性別</label>
                         <?php
-                        if (isset($_POST["radio"])) {
+                        if (isset($_POST['radio'])) {
 
                             //ラジオボタンで選択された値を受け取る
                             $radio = $_POST['radio'];
 
-                            if ($radio == "0") {
+                            if ($radio == 0) {
                                 echo "男";
-                            } elseif ($radio == "1") {
+                            } elseif ($radio == 1) {
                                 echo "女";
                             }
                         } ?>
@@ -87,7 +87,7 @@
 
                     <div><label class="conform6">住所（都道府県）</label>
                         <?php
-                        if (isset($_POST["prefecture"])) {
+                        if (isset($_POST['prefecture'])) {
 
                             //ラジオボタンで選択された値を受け取る
                             $prefecture = $_POST['prefecture'];
@@ -104,20 +104,24 @@
                     </div><br>
 
                     <div><label class="conform7">住所（番地）</label>
-                        <?php echo $_POST['address_2']; ?>
+                        <?php
+
+                        $address_2 = $_POST['address_2'];
+
+                        echo nl2br($address_2); ?>
 
                     </div><br>
 
                     <div><label class="conform8">アカウント権限</label>
                         <?php
-                        if (isset($_POST["privilege"])) {
+                        if (isset($_POST['privilege'])) {
 
                             //ラジオボタンで選択された値を受け取る
                             $privilege = $_POST['privilege'];
 
-                            if ($privilege == "0") {
+                            if ($privilege == 0) {
                                 echo "一般";
-                            } elseif ($privilege == "1") {
+                            } elseif ($privilege == 1) {
                                 echo "管理者";
                             }
                         } ?>

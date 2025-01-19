@@ -135,8 +135,8 @@
 
                 <div><label>メールアドレス</label>
                     <input type="email" class="text" size="40" pattern="[^!#$%&\*,<>~?]+" maxlength="100" name="mail" value="<?php if (!empty($_POST['mail'])) {
-                                                                                                                                    echo $_POST['mail'];
-                                                                                                                                } ?>">
+                                                                                                                                        echo $_POST['mail'];
+                                                                                                                                    } ?>">
                 </div>
                 <div id="num5" class="error"></div>
                 <br>
@@ -325,9 +325,9 @@
                 <br>
 
                 <div><label>住所（番地）</label>
-                    <input type="text" class="text" size="40" pattern="[^a-zA-Z!#$%&\*.,<>@~?]+" maxlength="100" name="address_2" value="<?php if (!empty($_POST['address_2'])) {
-                                                                                                                                                echo $_POST['address_2'];
-                                                                                                                                            } ?>">
+                    <textarea cols="20" rows="5" class="text" wrap="hard" pattern="[^a-zA-Z!#$%&\*.,<>@~?]+" maxlength="100" name="address_2" value="<?php if (!empty($_POST['address_2'])) {
+                                                                                                                                                        echo $_POST['address_2'];
+                                                                                                                                                    } ?>"></textarea>
                 </div>
                 <div id="num10" class="error"></div>
                 <br>

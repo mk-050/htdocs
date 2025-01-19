@@ -41,7 +41,6 @@ main {
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    height: 850px;
 }
 
 .account {
@@ -56,6 +55,11 @@ main {
 .conform2 {
     display: inline-block;
     margin-right: 55px;
+}
+
+span {
+    display: inline-block;
+    width: 300px;
 }
 
 .conform3 {

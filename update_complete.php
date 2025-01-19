@@ -11,12 +11,18 @@ try {
     $givenName_kana = $_POST['givenName_kana'];
     $mail = $_POST['mail'];
     $password = $_POST['password'];
+
     $radio = $_POST['radio'];
+    $int_radio = (int)$radio;
+
     $postalCode = $_POST['postalCode'];
     $prefecture = $_POST['prefecture'];
     $address_1 = $_POST['address_1'];
     $address_2 = $_POST['address_2'];
+
+
     $privilege = $_POST['privilege'];
+    $int_privilege = (int)$privilege;
 
     if (!empty($family_name)) {
         $pdo->exec(
@@ -55,9 +61,9 @@ try {
         );
     }
 
-    if (!empty($radio)) {
+    if (isset($radio)) {
         $pdo->exec(
-            "update account set gender='" . $radio . "'  where id='" . $id . "' "
+            "update account set gender='" . $int_radio . "'  where id='" . $id . "' "
         );
     }
 
@@ -85,9 +91,9 @@ try {
         );
     }
 
-    if (!empty($privilege)) {
+    if (isset($privilege)) {
         $pdo->exec(
-            "update account set authority='" . $privilege . "'  where id='" . $id . "' "
+            "update account set authority='" . $int_privilege . "'  where id='" . $id . "' "
         );
     }
 

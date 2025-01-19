@@ -60,6 +60,9 @@ form div {
     padding: 4px;
     float: right;
     margin-left: 40px;
+    resize: vertical;
+    width: 300px;
+
 }
 
 span.radio {

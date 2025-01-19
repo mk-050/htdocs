@@ -57,23 +57,23 @@
                 $mail = $row['mail'];
 
                 $param = $row['gender'];
-                if ($param == "0") {
+                if ($param == 0) {
                     $gender = "男";
-                } elseif ($param == "1") {
+                } elseif ($param == 1) {
                     $gender = "女";
                 }
 
                 $param1 = $row['authority'];
-                if ($param1 == "0") {
+                if ($param1 == 0) {
                     $privilege = "一般";
-                } elseif ($param1 == "1") {
+                } elseif ($param1 == 1) {
                     $privilege = "管理者";
                 }
 
                 $param2 = $row['delete_flag'];
-                if ($param2 == "0") {
+                if ($param2 == 0) {
                     $delete_flag = "有効";
-                } elseif ($param2 == "1") {
+                } elseif ($param2 == 1) {
                     $delete_flag = "無効";
                 }
 

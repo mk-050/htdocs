@@ -123,24 +123,24 @@
                 <br>
 
                 <div><label>メールアドレス</label>
-                    <input type="email" class="text" size="40" maxlength="100" name="mail" value="<?php echo $_POST['mail']; ?>">
+                    <input type="email" class="text" size="40" maxlength="100" wrap="soft" name="mail" value="<?php echo $_POST['mail']; ?>">
                 </div>
                 <div id="num5" class="error"></div>
                 <br>
 
                 <div><label>パスワード</label>
-                    <input type="password" class="text" size="40" maxlength="100" placeholder="※変更をご希望の場合、入力してください" name="password" value="<?php if (!empty($_POST['password'])) {
-                                                                                                                echo $_POST['password'];
-                                                                                                            } ?>">
+                    <input type="password" class="text" size="40" pattern="^[a-zA-Z0-9]+$" maxlength="10" placeholder="※変更をご希望の場合、入力してください" name="password" value="<?php if (!empty($_POST['password'])) {
+                                                                                                                                                                        echo $_POST['password'];
+                                                                                                                                                                    } ?>">
                 </div>
                 <div id="num6" class="error"></div>
                 <br>
 
                 <div><label>性別</label>
                     <span class="radio">
-                        <label><input type="radio" name="radio" value="0" checked <?php if ($_POST['radio'] == "0") {
+                        <label><input type="radio" name="radio" value="0" checked <?php if ($_POST['radio'] == 0) {
                                                                                         echo 'checked';
-                                                                                    } ?>>男</label><span class="A"><label><input type="radio" name="radio" value="1" <?php if ($_POST['radio'] == "1") {
+                                                                                    } ?>>男</label><span class="A"><label><input type="radio" name="radio" value="1" <?php if ($_POST['radio'] == 1) {
                                                                                                                                                                         echo 'checked';
                                                                                                                                                                     } ?>>女</span></label></span>
                 </div><br>
