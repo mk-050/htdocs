@@ -43,7 +43,7 @@ main {
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    height: 850px;
+    padding-bottom: 30px;
 }
 
 form {
@@ -53,16 +53,19 @@ form {
 
 form div {
     padding-right: 2px;
+    padding-top: 5px;
+}
+
+div.B{
+    padding-top: 30px;
 }
 
 .text {
     border: 3px solid black;
     padding: 4px;
     float: right;
-    margin-left: 40px;
-    resize: vertical;
     width: 300px;
-
+    margin-left: 40px;
 }
 
 span.radio {
@@ -100,7 +103,7 @@ span.A {
     margin: 0 auto;
     font-size: 20px;
     border: 1px solid black;
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 10px 95px;
 }
 

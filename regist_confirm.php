@@ -50,7 +50,10 @@
                     </div><br>
 
                     <div><label class="conform2">メールアドレス</label>
-                        <?php echo $_POST['mail']; ?>
+                        <div class="box">
+                            <div><span><?php echo $_POST['mail']; ?></span>
+                            </div>
+                        </div>
                     </div><br>
 
                     <div><label class="conform3">パスワード</label>
@@ -102,13 +105,9 @@
                     </div><br>
 
                     <div><label class="conform7">住所（番地）</label>
-                        <span><?php
-
-                                $address_2 = $_POST['address_2'];
-
-                                echo nl2br($address_2); ?></span>
-
-                    </div><br>
+                        <div class="box"><span><?php echo $_POST['address_2']; ?></span></div>
+                    </div>
+                    <br>
 
                     <div><label class="conform8">アカウント権限</label>
                         <?php
@@ -126,7 +125,9 @@
 
                     </div><br>
                     <?php $_POST['delete_flag'] = 1; ?>
+
                 </div>
+
                 <div style="display:inline-flex">
                     <form method="post" action="regist.php">
                         <input type="submit" class="submit" value="前に戻る">
@@ -134,7 +135,7 @@
                         <input type="hidden" value="<?php echo $_POST['givenName']; ?>" name="givenName">
                         <input type="hidden" value="<?php echo $_POST['familyName_kana']; ?>" name="familyName_kana">
                         <input type="hidden" value="<?php echo $_POST['givenName_kana']; ?>" name="givenName_kana">
-                        <input type="hidden" value="<?php echo $_POST['mail']; ?>" name="mail">
+                        <input type="hidden" value="<?php echo  $_POST['mail']; ?>" name="mail">
                         <input type="hidden" value="<?php echo $_POST['password']; ?>" name="password">
                         <input type="hidden" value="<?php echo $_POST['radio']; ?>" name="radio">
                         <input type="hidden" value="<?php echo $_POST['postalCode']; ?>" name="postalCode">
@@ -161,8 +162,9 @@
                         <input type="hidden" value="<?php echo $_POST['delete_flag']; ?>" name="delete_flag">
                     </form>
                 </div>
-
             </div>
+
+        </div>
         </div>
 
     </main>

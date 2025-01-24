@@ -50,7 +50,10 @@
                     </div><br>
 
                     <div><label class="conform2">メールアドレス</label>
-                        <span><?php echo $_POST['mail']; ?></span>
+                        <div class="box">
+                            <div><span><?php echo $_POST['mail']; ?></span>
+                            </div>
+                        </div>
                     </div><br>
 
                     <div><label class="conform3">パスワード</label>
@@ -102,14 +105,12 @@
                         <?php echo $_POST['address_1']; ?>
 
                     </div><br>
-
+                    
                     <div><label class="conform7">住所（番地）</label>
-                        <?php
-
-                        $address_2 = $_POST['address_2'];
-
-                        echo nl2br($address_2); ?>
-
+                        <div class="box">
+                            <div><span><?php echo $_POST['address_2']; ?></span>
+                            </div>
+                        </div>
                     </div><br>
 
                     <div><label class="conform8">アカウント権限</label>

@@ -123,9 +123,10 @@
                 <br>
 
                 <div><label>メールアドレス</label>
-                    <input type="email" class="text" size="40" maxlength="100" wrap="soft" name="mail" value="<?php echo $_POST['mail']; ?>">
+                    <input type="email" class="text" pattern="[^!#$%&\*,<>~?]+" maxlength="100" name="mail" value="<?php if (!empty($_POST['mail'])) {
+                                                                                                                        echo $_POST['mail'];
+                                                                                                                    } ?>">
                 </div>
-                <div id="num5" class="error"></div>
                 <br>
 
                 <div><label>パスワード</label>
@@ -308,7 +309,9 @@
                 <br>
 
                 <div><label>住所（番地）</label>
-                    <input type="text" class="text" size="40" pattern="[^a-zA-Z!#$%&\*.,<>@~?]+" maxlength="100" name="address_2" value="<?php echo $_POST['address_2']; ?>">
+                    <input type="text" class="text" pattern="[^a-zA-Z!#$%&\*.,<>@~?]+" name="address_2" value="<?php if (!empty($_POST['address_2'])) {
+                                                                                                                                                        echo $_POST['address_2'];
+                                                                                                                                                    } ?>">
                 </div>
                 <div id="num10" class="error"></div>
                 <br>
