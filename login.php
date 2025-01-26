@@ -17,8 +17,6 @@
             <li>登録フォーム</li>
             <li>問い合わせ</li>
             <li>その他</li>
-            <li>アカウント登録</li>
-            <li>アカウント一覧</li>
         </ul>
 
     </header>
@@ -26,7 +24,7 @@
     <h1>ログイン画面</h1><br>
 
     <main>
-        <form action="http://localhost/regist/home.html">
+        <form method="post" action="http://localhost/regist/home.php">
             <ul class="login">
 
                 <li>

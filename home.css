@@ -22,6 +22,10 @@ header ul li {
     font-size: 25px;
 }
 
+.hide {
+    display: none;
+}
+
 a {
     text-decoration: none;
     color: white;

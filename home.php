@@ -1,3 +1,46 @@
+<?php
+session_start();
+try {
+    // PDOでデータベースに接続
+    $pdo = new PDO("mysql:host=localhost;dbname=lesson01;charset=utf8", "mkuser", "mysql");
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $mail = $_POST['mail'];
+    $password = $_POST['password'];
+
+    $sql = 'SELECT * FROM account WHERE mail = :mail';
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(['mail' => $mail]);
+    $user = $stmt->fetch();
+
+    if ($user && password_verify($password, $user['password'])) {
+        $_SESSION['id'] = $user['id'];
+        $_SESSION['authority'] = $user['authority'];
+
+        $id = $user['id'];
+        $authority = $user['authority'];
+        $family_name = $user['family_name'];
+
+        if ($authority == 1) {
+
+            $class = "";
+
+            $msg = 'こんにちは' . htmlspecialchars($family_name, \ENT_QUOTES, 'UTF-8') . 'さん';
+        } else {
+
+            $class = "hide";
+            $msg = '一般';
+        }
+    } else {
+        $class = "hide";
+        $msg = 'ログイン失敗';
+    }
+} catch (PDOException $e) {
+    echo "データベース接続エラー: " . $e->getMessage();
+    // PDO接続を閉じる
+    $pdo = null;
+}
+?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -5,10 +48,15 @@
     <meta charset="UTF-8">
     <title>D.I.BLOG</title>
     <link rel="stylesheet" type="text/css" href="home.css" />
+    <style>
+        .hide {
+            display: none;
+        }
+    </style>
 </head>
+
 <body>
     <header>
-
         <ul>
             <li>トップ</li>
             <li>プロフィール</li>
@@ -16,23 +64,24 @@
             <li>登録フォーム</li>
             <li>問い合わせ</li>
             <li>その他</li>
-            <li class="a">
+            <li class="<?PHP echo $class; ?>">
                 <a href="http://localhost/regist/regist.php">アカウント登録</a>
             </li>
-            <li class="a">
+            <li class="<?PHP echo $class; ?>">
                 <a href="http://localhost/regist/list.php">アカウント一覧</a>
             </li>
         </ul>
 
     </header>
-    
+
+
     <main>
         <div class="main-container">
 
             <div class="left">
 
                 <h1>プログラミングに役立つ書籍</h1>
-                <H4>2017年1月15日</H4>
+                <H4><?php echo $msg ?></H4>
 
                 <div class="img1">
                     <img src="bookstore.jpg">
