@@ -134,7 +134,7 @@ try {
     <h1>アカウント更新完了画面</h1><br>
 
     <main>
-        <form action="http://localhost/regist/home.html">
+        <form action="http://localhost/regist/home.php">
 
             <div class="complete">
                 <p>更新完了しました</p>
