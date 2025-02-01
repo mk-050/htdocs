@@ -22,6 +22,10 @@ header ul li {
     font-size: 25px;
 }
 
+.hide {
+    display: none;
+}
+
 a {
     text-decoration: none;
     color: white;
@@ -30,6 +34,11 @@ a {
 h1 {
     padding-left: 80px;
     font-size: 20px;
+}
+
+span.message {
+    margin-left: 240px;
+    color: red;
 }
 
 main {
@@ -51,14 +60,27 @@ form {
     font-size: 20px;
 }
 
+form.do_not_submit {
+    pointer-events: none;
+    display: inline-block;
+    font-size: 20px;
+}
+
 form div {
     padding-right: 2px;
     padding-top: 5px;
 }
 
-div.B{
+div.B {
     padding-top: 30px;
 }
+
+form div.do_not_submit {
+    filter: blur(5px);
+    padding-right: 2px;
+    padding-top: 5px;
+}
+
 
 .text {
     border: 3px solid black;

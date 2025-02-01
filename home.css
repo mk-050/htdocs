@@ -31,6 +31,12 @@ a {
     color: white;
 }
 
+#link{
+    float: right;
+    color: blue;
+    font-weight: 700;
+}
+
 main {
     /* floatを解除 */
     clear: both;

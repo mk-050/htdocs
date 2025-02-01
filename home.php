@@ -1,44 +1,21 @@
 <?php
 session_start();
-try {
-    // PDOでデータベースに接続
-    $pdo = new PDO("mysql:host=localhost;dbname=lesson01;charset=utf8", "mkuser", "mysql");
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $mail = $_POST['mail'];
-    $password = $_POST['password'];
+$authority = $_SESSION['authority'];
+$family_name = $_SESSION['family_name'];
 
-    $sql = 'SELECT * FROM account WHERE mail = :mail';
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute(['mail' => $mail]);
-    $user = $stmt->fetch();
+if ($authority == 1 || $authority == 0) {
 
-    if ($user && password_verify($password, $user['password'])) {
-        $_SESSION['id'] = $user['id'];
-        $_SESSION['authority'] = $user['authority'];
+    $class = "";
 
-        $id = $user['id'];
-        $authority = $user['authority'];
-        $family_name = $user['family_name'];
+    $msg = 'こんにちは' . htmlspecialchars($family_name, \ENT_QUOTES, 'UTF-8') . 'さん';
+    $link = '<a href="logout.php" id="link">[ログアウトする]</a>';
+} else {
 
-        if ($authority == 1) {
+    $class = "hide";
 
-            $class = "";
-
-            $msg = 'こんにちは' . htmlspecialchars($family_name, \ENT_QUOTES, 'UTF-8') . 'さん';
-        } else {
-
-            $class = "hide";
-            $msg = '一般';
-        }
-    } else {
-        $class = "hide";
-        $msg = 'ログイン失敗';
-    }
-} catch (PDOException $e) {
-    echo "データベース接続エラー: " . $e->getMessage();
-    // PDO接続を閉じる
-    $pdo = null;
+    $msg = 'こんにちは' . htmlspecialchars($family_name, \ENT_QUOTES, 'UTF-8') . 'さん';
+    $link = '<a href="logout.php" id="link">[ログアウトする]</a>';
 }
 ?>
 <!DOCTYPE html>
@@ -81,8 +58,7 @@ try {
             <div class="left">
 
                 <h1>プログラミングに役立つ書籍</h1>
-                <H4><?php echo $msg ?></H4>
-
+                <H4><?php echo $msg; ?></H4>
                 <div class="img1">
                     <img src="bookstore.jpg">
                 </div>
@@ -138,6 +114,7 @@ try {
 
         </div>
         <div class="right">
+        <?php echo $link; ?>
 
             <h2>人気の記事</h2>
 

@@ -1,3 +1,20 @@
+<?php
+session_start();
+$authority = $_SESSION['authority'];
+
+if ($authority == 1) {
+    $class = "";
+    $msg = "";
+    $form = "";
+    $account = "";
+} else {
+    $class = "hide";
+    $msg = "操作できません。アカウント権限を確認してください";
+    $form = "do_not_submit";
+    $account = "do_not_submit";
+}
+
+?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -12,26 +29,30 @@
 
         <ul>
             <li class="a">
-                <a href="http://localhost/regist/home.html">トップ</a>
+                <a href="http://localhost/regist/home.php">トップ</a>
             </li>
             <li>プロフィール</li>
             <li>D.I.Blogについて</li>
             <li>登録フォーム</li>
             <li>問い合わせ</li>
             <li>その他</li>
-            <li>アカウント登録</li>
-            <li>アカウント一覧</li>
+            <li class="<?PHP echo $class; ?>">
+                <a href="http://localhost/regist/regist.php">アカウント登録</a>
+            </li>
+            <li class="<?PHP echo $class; ?>">
+                <a href="http://localhost/regist/list.php">アカウント一覧</a>
+            </li>
         </ul>
 
     </header>
 
-    <h1>アカウント削除画面</h1><br>
+    <h1>アカウント削除画面<span class="message"><?PHP echo $msg; ?></span></h1><br>
 
     <main>
         <div class="main-container">
 
             <div class="accountA">
-                <div class="account">
+                <div class="<?PHP echo $account; ?>">
 
                     <div><label class="conform">名前（姓）</label>
                         <?php echo $_POST['familyName']; ?>
@@ -50,11 +71,14 @@
                     </div><br>
 
                     <div><label class="conform2">メールアドレス</label>
-                        <?php echo $_POST['mail']; ?>
+                        <div class="box">
+                            <div><span class="form"><?php echo $_POST['mail']; ?></span>
+                            </div>
+                        </div>
                     </div><br>
 
                     <div><label class="conform3">パスワード</label>
-                    <p>※セキュリティのため非表示にしています</p>
+                        <p>※セキュリティのため非表示にしています</p>
                     </div><br>
 
                     <div><label class="conform4">性別</label>
@@ -96,8 +120,10 @@
                     </div><br>
 
                     <div><label class="conform7">住所（番地）</label>
-                        <?php echo $_POST['address_2']; ?>
-
+                        <div class="box">
+                            <div><span class="form"><?php echo $_POST['address_2']; ?></span>
+                            </div>
+                        </div>
                     </div><br>
 
                     <div><label class="conform8">アカウント権限</label>
@@ -118,7 +144,7 @@
                     <?php $_POST['delete_flag'] = 1; ?>
                 </div>
 
-                <form method="post" action="http://localhost/regist/delete_confirm.php">
+                <form class="<?PHP echo $form; ?>" method="post" action="http://localhost/regist/delete_confirm.php">
                     <input type="submit" class="submit" value="確認する">
                     <input type="hidden" value="<?php echo $_POST['id']; ?>" name="id">
                     <input type="hidden" value="<?php echo $_POST['familyName']; ?>" name="familyName">

@@ -1,105 +1,113 @@
 <?php
+session_start();
+
+$authority = $_SESSION['authority'];
 mb_internal_encoding("UTF-8");
 
-try {
-    $pdo = new PDO("mysql:dbname=lesson01;host=localhost;", "mkuser", "mysql");
+if ($authority == 1) {
+    try {
+        $pdo = new PDO("mysql:dbname=lesson01;host=localhost;", "mkuser", "mysql");
 
-    $id = $_POST['id'];
-    $family_name = $_POST['familyName'];
-    $last_name = $_POST['givenName'];
-    $family_name_kana = $_POST['familyName_kana'];
-    $givenName_kana = $_POST['givenName_kana'];
-    $mail = $_POST['mail'];
-    $password = $_POST['password'];
+        $id = $_POST['id'];
+        $family_name = $_POST['familyName'];
+        $last_name = $_POST['givenName'];
+        $family_name_kana = $_POST['familyName_kana'];
+        $givenName_kana = $_POST['givenName_kana'];
+        $mail = $_POST['mail'];
+        $password = $_POST['password'];
 
-    $radio = $_POST['radio'];
-    $int_radio = (int)$radio;
+        $radio = $_POST['radio'];
+        $int_radio = (int)$radio;
 
-    $postalCode = $_POST['postalCode'];
-    $prefecture = $_POST['prefecture'];
-    $address_1 = $_POST['address_1'];
-    $address_2 = $_POST['address_2'];
+        $postalCode = $_POST['postalCode'];
+        $prefecture = $_POST['prefecture'];
+        $address_1 = $_POST['address_1'];
+        $address_2 = $_POST['address_2'];
 
 
-    $privilege = $_POST['privilege'];
-    $int_privilege = (int)$privilege;
+        $privilege = $_POST['privilege'];
+        $int_privilege = (int)$privilege;
 
-    if (!empty($family_name)) {
-        $pdo->exec(
-            "update account set family_name='" . $family_name . "'  where id='" . $id . "' "
-        );
+        if (!empty($family_name)) {
+            $pdo->exec(
+                "update account set family_name='" . $family_name . "'  where id='" . $id . "' "
+            );
+        }
+
+        if (!empty($last_name)) {
+            $pdo->exec(
+                "update account set last_name='" . $last_name . "'  where id='" . $id . "' "
+            );
+        }
+
+        if (!empty($family_name_kana)) {
+            $pdo->exec(
+                "update account set family_name_kana='" . $family_name_kana . "'  where id='" . $id . "' "
+            );
+        }
+
+        if (!empty($givenName_kana)) {
+            $pdo->exec(
+                "update account set last_name_kana='" . $givenName_kana . "'  where id='" . $id . "' "
+            );
+        }
+
+        if (!empty($mail)) {
+            $pdo->exec(
+                "update account set mail='" . $mail . "'  where id='" . $id . "' "
+            );
+        }
+
+        if (!empty($password)) {
+
+            $pdo->exec(
+                "update account set password='" . password_hash($_POST['password'], PASSWORD_DEFAULT) . "'  where id='" . $id . "' "
+            );
+        }
+
+        if (isset($radio)) {
+            $pdo->exec(
+                "update account set gender='" . $int_radio . "'  where id='" . $id . "' "
+            );
+        }
+
+        if (!empty($postalCode)) {
+            $pdo->exec(
+                "update account set postal_code='" . $postalCode . "'  where id='" . $id . "' "
+            );
+        }
+
+        if (!empty($prefecture)) {
+            $pdo->exec(
+                "update account set prefecture='" . $prefecture . "'  where id='" . $id . "' "
+            );
+        }
+
+        if (!empty($address_1)) {
+            $pdo->exec(
+                "update account set address_1='" . $address_1 . "'  where id='" . $id . "' "
+            );
+        }
+
+        if (!empty($address_2)) {
+            $pdo->exec(
+                "update account set address_2='" . $address_2 . "'  where id='" . $id . "' "
+            );
+        }
+
+        if (isset($privilege)) {
+            $pdo->exec(
+                "update account set authority='" . $int_privilege . "'  where id='" . $id . "' "
+            );
+        }
+
+        //データベース切断
+        $pdo = null;
+    } catch (PDOException $e) {
+        header('Location:http://localhost/regist/update_error.php');
+        exit;
     }
-
-    if (!empty($last_name)) {
-        $pdo->exec(
-            "update account set last_name='" . $last_name . "'  where id='" . $id . "' "
-        );
-    }
-
-    if (!empty($family_name_kana)) {
-        $pdo->exec(
-            "update account set family_name_kana='" . $family_name_kana . "'  where id='" . $id . "' "
-        );
-    }
-
-    if (!empty($givenName_kana)) {
-        $pdo->exec(
-            "update account set last_name_kana='" . $givenName_kana . "'  where id='" . $id . "' "
-        );
-    }
-
-    if (!empty($mail)) {
-        $pdo->exec(
-            "update account set mail='" . $mail . "'  where id='" . $id . "' "
-        );
-    }
-
-    if (!empty($password)) {
-
-        $pdo->exec(
-            "update account set password='" . password_hash($_POST['password'], PASSWORD_DEFAULT) . "'  where id='" . $id . "' "
-        );
-    }
-
-    if (isset($radio)) {
-        $pdo->exec(
-            "update account set gender='" . $int_radio . "'  where id='" . $id . "' "
-        );
-    }
-
-    if (!empty($postalCode)) {
-        $pdo->exec(
-            "update account set postal_code='" . $postalCode . "'  where id='" . $id . "' "
-        );
-    }
-
-    if (!empty($prefecture)) {
-        $pdo->exec(
-            "update account set prefecture='" . $prefecture . "'  where id='" . $id . "' "
-        );
-    }
-
-    if (!empty($address_1)) {
-        $pdo->exec(
-            "update account set address_1='" . $address_1 . "'  where id='" . $id . "' "
-        );
-    }
-
-    if (!empty($address_2)) {
-        $pdo->exec(
-            "update account set address_2='" . $address_2 . "'  where id='" . $id . "' "
-        );
-    }
-
-    if (isset($privilege)) {
-        $pdo->exec(
-            "update account set authority='" . $int_privilege . "'  where id='" . $id . "' "
-        );
-    }
-
-    //データベース切断
-    $pdo = null;
-} catch (PDOException $e) {
+} else {
     header('Location:http://localhost/regist/update_error.php');
     exit;
 }

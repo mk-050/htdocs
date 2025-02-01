@@ -22,6 +22,10 @@ header ul li {
     font-size: 25px;
 }
 
+.hide {
+    display: none;
+}
+
 a {
     text-decoration: none;
     color: white;
@@ -32,6 +36,11 @@ h1 {
     font-size: 20px;
 }
 
+span.message {
+    margin-left: 240px;
+    color: red;
+}
+
 main {
     width: 100%;
     display: flex;
@@ -40,8 +49,8 @@ main {
     height: 850px;
 }
 
-.table form .submit{
-    width:100%
+.table form .submit {
+    width: 100%
 }
 
 .table {

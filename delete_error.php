@@ -23,7 +23,7 @@
     </header>
 
     <main>
-        <form action="http://localhost/regist/home.html">
+        <form action="http://localhost/regist/home.php">
 
             <div class="error">
                 <p>エラーが発生したためアカウント削除できません。</p>

@@ -21,6 +21,10 @@ header ul li {
     font-size: 25px;
 }
 
+.hide {
+    display: none;
+}
+
 a {
     text-decoration: none;
     color: white;
@@ -29,6 +33,11 @@ a {
 h1 {
     padding-left: 80px;
     font-size: 20px;
+}
+
+span.message {
+    margin-left: 230px;
+    color: red;
 }
 
 main {
@@ -41,11 +50,16 @@ main {
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    height: 850px;
+    padding-bottom: 30px;
 }
 
-.account {
-    margin-left: 80px;
+.accountA {
+    font-size: 20px;
+}
+
+div.do_not_submit {
+    filter: blur(5px);
+    font-size: 20px;
 }
 
 .conform {
@@ -54,8 +68,47 @@ main {
 }
 
 .conform2 {
-    display: inline-block;
+    float: left;
+    padding-top: 10px;
     margin-right: 55px;
+}
+
+.box {
+    display: flex;
+    width: 300px;
+    height: 60px;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+.box div {
+    width: 80%;
+    margin: 5px;
+    flex-shrink: 0;
+}
+
+.box::-webkit-scrollbar {
+    height: 14px;
+    /* スクロールバーの高さ */
+}
+
+.box::-webkit-scrollbar-thumb {
+    background: #6af5d5;
+    /* ツマミの色 */
+    border-radius: 7px;
+    /* ツマミ両端の丸み */
+}
+
+.box::-webkit-scrollbar-track {
+    background: #f0eeee;
+    /* トラックの色 */
+    border-radius: 7px;
+    /* トラック両端の丸み */
+}
+
+span.form {
+    display: inline-block;
+    width: 300px;
 }
 
 .conform3 {
@@ -63,7 +116,7 @@ main {
     margin-right: 95px;
 }
 
-p{
+p {
     display: inline-block;
     font-size: 15px;
 }
@@ -84,8 +137,9 @@ p{
 }
 
 .conform7 {
-    display: inline-block;
-    margin-right: 73px;
+    float: left;
+    padding-top: 10px;
+    margin-right: 70px;
 }
 
 .conform8 {
@@ -93,12 +147,14 @@ p{
     margin-right: 50px;
 }
 
-.accountA {
-    font-size: 20px;
-}
-
 .accountA div {
     padding-right: 2px;
+}
+
+form.do_not_submit {
+    pointer-events: none;
+    display: inline-block;
+    font-size: 20px;
 }
 
 .submit {

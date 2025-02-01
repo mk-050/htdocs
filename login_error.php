@@ -1,43 +1,14 @@
-<?php
-session_start();
-
-$authority = $_SESSION['authority'];
-mb_internal_encoding("UTF-8");
-
-if ($authority == 1) {
-    try {
-        $pdo = new PDO("mysql:dbname=lesson01;host=localhost;", "mkuser", "mysql");
-
-        $id = $_POST['id'];
-
-        $pdo->exec(
-            "update account set delete_flag=0 where id='" . $id . "' "
-        );
-        //データベース切断
-        $pdo = null;
-    } catch (PDOException $e) {
-        header('Location:http://localhost/regist/delete_error.php');
-        exit;
-    }
-} else {
-    header('Location:http://localhost/regist/delete_error.php');
-    exit;
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="ja">
 
 <head>
     <meta charset="UTF-8">
-    <title>account</title>
+    <title>Login</title>
     <link rel="stylesheet" type="text/css" href="regist_complete.css" />
 </head>
 
 <body>
     <header>
-
         <ul>
             <li>トップ</li>
             <li>プロフィール</li>
@@ -51,19 +22,18 @@ if ($authority == 1) {
 
     </header>
 
-    <h1>アカウント削除完了画面</h1><br>
-
     <main>
-        <form action="http://localhost/regist/home.php">
+        <form action="http://localhost/regist/home.html">
 
-            <div class="complete">
-                <p>削除完了しました</p>
+            <div class="error">
+                <p>エラーが発生したためログイン情報を取得できません。</p>
             </div>
 
             <div>
                 <input type="submit" class="submit" value="TOPページへ戻る">
             </div>
         </form>
+
 
     </main>
 

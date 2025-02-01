@@ -1,3 +1,19 @@
+<?php
+session_start();
+$authority = $_SESSION['authority'];
+
+if ($authority == 1) {
+    $class = "";
+    $msg = "";
+    $form = "";
+} else {
+    $class = "hide";
+    $msg = "操作できません。アカウント権限を確認してください";
+    $form = "do_not_submit";
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -69,6 +85,7 @@
 
             if (form.familyName.value == "" || form.givenName.value == "" || form.familyName_kana.value == "" || form.givenName_kana.value == "" || form.mail.value == "" || form.password.value == "" || form.postalCode.value == "" || form.prefecture.value == "" || form.address_1.value == "" || form.address_2.value == "") {
                 return false;
+
             } else {
                 return true;
             }
@@ -89,18 +106,22 @@
             <li>登録フォーム</li>
             <li>問い合わせ</li>
             <li>その他</li>
-            <li>アカウント登録</li>
-            <li>アカウント一覧</li>
+            <li class="<?PHP echo $class; ?>">
+                <a href="http://localhost/regist/regist.php">アカウント登録</a>
+            </li>
+            <li class="<?PHP echo $class; ?>">
+                <a href="http://localhost/regist/list.php">アカウント一覧</a>
+            </li>
         </ul>
 
     </header>
 
-    <h1>アカウント登録画面</h1><br>
+    <h1>アカウント登録画面 <span class="message"><?PHP echo $msg; ?></span></h1><br>
 
     <main>
         <div class="main-container">
 
-            <form method="post" name="form" action="regist_confirm.php" onsubmit="return check()">
+            <form class="<?PHP echo $form; ?>" method="post" name="form" action="regist_confirm.php" onsubmit="return check()">
                 <div><label>名前（姓）</label>
                     <input type="text" class="text" pattern="[\u4E00-\u9FFF\u3040-\u309Fー]*" maxlength="10" name="familyName" value="<?php if (!empty($_POST['familyName'])) {
                                                                                                                                             echo $_POST['familyName'];
@@ -154,8 +175,8 @@
                             <label><input type="radio" name="radio" value="0" checked <?php if (!empty($_POST['radio']) && $_POST['radio'] == "0") {
                                                                                             echo 'checked';
                                                                                         } ?>>男</label><span class="A"><label><input type="radio" name="radio" value="1" <?php if (!empty($_POST['radio']) && $_POST['radio'] == "1") {
-                                                                                                                                                                        echo 'checked';
-                                                                                                                                                                    } ?>>女</span></label></span>
+                                                                                                                                                                            echo 'checked';
+                                                                                                                                                                        } ?>>女</span></label></span>
                     </div><br>
 
                     <div><label>郵便番号</label>
@@ -326,8 +347,8 @@
 
                     <div><label>住所（番地）</label>
                         <input type="text" class="text" pattern="[^a-zA-Z!#$%&\*.,<>@~?]+" name="address_2" value="<?php if (!empty($_POST['address_2'])) {
-                                                                                                                                                            echo $_POST['address_2'];
-                                                                                                                                                        } ?>">
+                                                                                                                        echo $_POST['address_2'];
+                                                                                                                    } ?>">
                     </div>
                     <div id="num10" class="error"></div>
                     <br>
