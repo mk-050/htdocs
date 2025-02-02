@@ -16,21 +16,19 @@
             <li>登録フォーム</li>
             <li>問い合わせ</li>
             <li>その他</li>
-            <li>アカウント登録</li>
-            <li>アカウント一覧</li>
         </ul>
 
     </header>
 
     <main>
-        <form action="http://localhost/regist/home.html">
+        <form action="http://localhost/regist/login.php">
 
             <div class="error">
                 <p>エラーが発生したためログイン情報を取得できません。</p>
             </div>
 
             <div>
-                <input type="submit" class="submit" value="TOPページへ戻る">
+                <input type="submit" class="submit" value="ログイン">
             </div>
         </form>
 

@@ -25,7 +25,7 @@ try {
         exit;
     } else {
         $msg = 'ログインできませんでした';
-        $link = '<a href="login.php">ログイン</a>';
+        $link = '<a href="login.php">ログイン画面へ戻る</a>';
     }
 } catch (PDOException $e) {
     header('Location:http://localhost/regist/login_error.php');

@@ -104,11 +104,13 @@ if ($authority == 1) {
         //データベース切断
         $pdo = null;
     } catch (PDOException $e) {
-        header('Location:http://localhost/regist/update_error.php');
+        $_SESSION['error'] = "update_error";
+        header('Location:http://localhost/regist/error.php');
         exit;
     }
 } else {
-    header('Location:http://localhost/regist/update_error.php');
+    $_SESSION['error'] = "update_error";
+    header('Location:http://localhost/regist/error.php');
     exit;
 }
 

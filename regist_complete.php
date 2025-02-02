@@ -16,11 +16,14 @@ values('" . $_POST['familyName'] . "','" . $_POST['givenName'] . "','" . $_POST[
         //データベース切断
         $pdo = null;
     } catch (PDOException $e) {
-        header('Location:http://localhost/regist/regist_error.php');
+
+        $_SESSION['error'] = "regist_error";
+        header('Location:http://localhost/regist/error.php');
         exit;
     }
 } else {
-    header('Location:http://localhost/regist/regist_error.php');
+    $_SESSION['error'] = "regist_error";
+    header('Location:http://localhost/regist/error.php');
     exit;
 }
 
@@ -54,7 +57,7 @@ values('" . $_POST['familyName'] . "','" . $_POST['givenName'] . "','" . $_POST[
     <h1>アカウント登録完了画面</h1><br>
 
     <main>
-        <form action="http://localhost/regist/home.html">
+        <form action="http://localhost/regist/home.php">
 
             <div class="complete">
                 <p>登録完了しました</p>

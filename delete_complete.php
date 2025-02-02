@@ -16,11 +16,13 @@ if ($authority == 1) {
         //データベース切断
         $pdo = null;
     } catch (PDOException $e) {
-        header('Location:http://localhost/regist/delete_error.php');
+        $_SESSION['error'] = "delete_error";
+        header('Location:http://localhost/regist/error.php');
         exit;
     }
 } else {
-    header('Location:http://localhost/regist/delete_error.php');
+    $_SESSION['error'] = "delete_error";
+    header('Location:http://localhost/regist/error.php');
     exit;
 }
 
