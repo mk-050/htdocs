@@ -4,7 +4,7 @@ session_start();
 $authority = $_SESSION['authority'];
 $family_name = $_SESSION['family_name'];
 
-if ($authority == 1 || $authority == 0) {
+if ($authority == 1) {
 
     $class = "";
 
@@ -114,7 +114,7 @@ if ($authority == 1 || $authority == 0) {
 
         </div>
         <div class="right">
-        <?php echo $link; ?>
+            <?php echo $link; ?>
 
             <h2>人気の記事</h2>
 

@@ -21,7 +21,7 @@ try {
         $_SESSION['authority'] = $user['authority'];
         $_SESSION['family_name'] = $user['family_name'];
 
-        header("Location: home.php");
+        header("Location:http://localhost/regist/home.php");
         exit;
     } else {
         $msg = 'ログインできませんでした';
