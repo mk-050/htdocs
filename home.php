@@ -4,7 +4,7 @@ session_start();
 $authority = $_SESSION['authority'];
 $family_name = $_SESSION['family_name'];
 
-if ($authority == 1||$authority == 0) {
+if ($authority == 1) {
 
     $class = "";
 
