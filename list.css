@@ -43,40 +43,100 @@ span.message {
 
 main {
     width: 100%;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
+}
+
+.main-container {
+    width: 95%;
     margin: 0 auto;
-    height: 850px;
 }
 
-.table form .submit {
-    width: 100%
-}
-
-.table {
+.A {
     border-collapse: collapse;
     table-layout: fixed;
     height: 20px;
-    width: 95%;
+    width: 100%;
     font-size: 15px;
 }
 
-.table th,
-.table td,
-.table tr {
+.A th,
+.A td,
+.A tr {
     border: 2px solid black;
     white-space: nowrap;
     overflow: hidden;
     padding-right: 3px;
 }
 
-.table td.right {
+.text {
+    width: 300px;
+    border: none;
+    outline: none;
+}
+
+span.radio {
+    margin: 30px;
+}
+
+span.A {
+    margin-left: 200px;
+}
+
+.gender {
+    margin-right: 50px;
+}
+
+.privilege {
+    width: 100%;
+    text-align: center;
+    border: none;
+    outline: none;
+}
+
+form .submitA {
+    float: right;
+    width: 15%;
+    margin-bottom: 50px;
+    border: 2px solid black;
+    border-top: none;
+    padding: 3px;
+}
+
+.B form .submit {
+    width: 100%
+}
+
+.B {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    table-layout: fixed;
+    height: 20px;
+    font-size: 15px;
+    margin-bottom: 50px;
+}
+
+.B th,
+.B td,
+.B tr {
+    border: 2px solid black;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-right: 3px;
+}
+
+.B td.right {
     text-align: right;
 }
 
-.table td.center {
+.B td.center,
+.B th {
     text-align: center;
 }
+
+
 
 footer {
     float: left;
