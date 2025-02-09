@@ -4,18 +4,21 @@ session_start();
 $authority = $_SESSION['authority'];
 $family_name = $_SESSION['family_name'];
 
-if ($authority == 1) {
+if (isset($_SESSION['authority']) && $authority == 1) {
 
     $class = "";
 
     $msg = 'こんにちは' . htmlspecialchars($family_name, \ENT_QUOTES, 'UTF-8') . 'さん';
     $link = '<a href="logout.php" id="link">[ログアウトする]</a>';
-} else {
+} else if (isset($_SESSION['authority']) && $authority == 0) {
 
     $class = "hide";
 
     $msg = 'こんにちは' . htmlspecialchars($family_name, \ENT_QUOTES, 'UTF-8') . 'さん';
     $link = '<a href="logout.php" id="link">[ログアウトする]</a>';
+} else {
+    header('Location:http://localhost/regist/login.php');
+    exit;
 }
 ?>
 <!DOCTYPE html>

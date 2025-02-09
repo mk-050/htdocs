@@ -24,6 +24,19 @@ if (isset($_SESSION['authority'])) {
     <meta charset="UTF-8">
     <title>List of user accounts</title>
     <link rel="stylesheet" type="text/css" href="list.css" />
+    <script>
+        //ラジオボタンをそのまま押して解除できるようにする
+        var remove = 2;
+
+        function radioDeselection(already, numeric) {
+            if (remove == numeric) {
+                already.checked = false;
+                remove = 2;
+            } else {
+                remove = numeric;
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -71,20 +84,33 @@ if (isset($_SESSION['authority'])) {
                                                                                                                                                 } ?>"></td>
 
                         <th>カナ（名）</th>
-                        <td colspan="3"><input type="text" class="text" pattern="[\u30A1-\u30FF]*" maxlength="10" name="givenName_kana"></td>
+                        <td colspan="3"><input type="text" class="text" pattern="[\u30A1-\u30FF]*" maxlength="10" name="givenName_kana" value="<?php if (!empty($_POST['givenName_kana'])) {
+                                                                                                                                                    echo $_POST['givenName_kana'];
+                                                                                                                                                } ?>"></td>
                     </tr>
                     <tr>
                         <th>メールアドレス</th>
-                        <td colspan="3"><input type="email" class="text" pattern="[^!#$%&\*,<>~?]+" maxlength="100" name="mail"></td>
+                        <td colspan="3"><input type="text" class="text" pattern="[^!#$%&\*,<>~?]+" maxlength="100" name="mail_A" value="<?php if (!empty($_POST['mail_A'])) {
+                                                                                                                                            echo $_POST['mail_A'];
+                                                                                                                                        } ?>"></td>
                         <th>性別</th>
                         <td colspan="3"><span class="radio">
-                                <label><input type="radio" class="gender" name="radio" value="0" checked>男</label><span class="A"><label><input type="radio" class="gender" name="radio" value="1">女</span></label></span></td>
+                                <label><input type="radio" class="gender" name="radio" value="0" <?php if (isset($_POST['radio']) && $_POST['radio'] == 0) {
+                                                                                                        echo 'checked';
+                                                                                                    } ?> onclick="radioDeselection(this, 0)">男</label><span class="A"><label><input type="radio" class="gender" name="radio" value="1" <?php if (isset($_POST['radio']) && $_POST['radio'] == 1) {
+                                                                                                                                                                                                                                            echo 'checked';
+                                                                                                                                                                                                                                        } ?> onclick="radioDeselection(this, 1)">女</span></label></span></td>
                     </tr>
                     <tr>
                         <th>アカウント権限</th>
                         <td colspan="3"><select class="privilege" name="privilege">
-                                <option value="0" selected>一般</option>
-                                <option value="1">管理者</option>
+                                <option value="2">未選択</option>
+                                <option value="0" <?php if (isset($_POST['privilege']) && $_POST['privilege'] == "0") {
+                                                        echo 'selected';
+                                                    } ?>>一般</option>
+                                <option value="1" <?php if (isset($_POST['privilege']) && $_POST['privilege'] == "1") {
+                                                        echo 'selected';
+                                                    } ?>>管理者</option>
                             </select></td>
                     </tr>
 
@@ -115,6 +141,34 @@ if (isset($_SESSION['authority'])) {
                     $familyName_kana = "";
                 }
 
+                if (isset($_POST['givenName_kana'])) {
+                    $givenName_kana = $_POST['givenName_kana'];
+                } else {
+                    $givenName_kana = "";
+                }
+
+                if (isset($_POST['mail_A'])) {
+                    $mail_A = $_POST['mail_A'];
+                } else {
+                    $mail_A = "";
+                }
+
+                if (isset($_POST['radio']) && $_POST['radio'] == 0) {
+                    $radio = 0;
+                } else if (isset($_POST['radio']) && $_POST['radio'] == 1) {
+                    $radio = 1;
+                } else {
+                    $radio = "";
+                }
+
+                if (isset($_POST['privilege']) && $_POST['privilege'] == 0) {
+                    $privilege = 0;
+                } else if (isset($_POST['privilege']) && $_POST['privilege'] == 1) {
+                    $privilege = 1;
+                } else {
+                    $privilege = "";
+                }
+
 
                 try {
                     // PDOでデータベースに接続
@@ -122,7 +176,7 @@ if (isset($_SESSION['authority'])) {
                     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
                     // SQLクエリの準備と実行
-                    $query = "SELECT * FROM account where family_name LIKE '%$familyName%' and last_name LIKE '%$givenName%' and family_name_kana LIKE '%$familyName_kana%' ORDER BY id DESC";
+                    $query = "SELECT * FROM account where family_name LIKE '%$familyName%' and last_name LIKE '%$givenName%'  and family_name_kana LIKE '%$familyName_kana%' and last_name_kana LIKE '%$givenName_kana%' and  mail LIKE '%$mail_A%' and gender LIKE '%$radio%' and authority LIKE '%$privilege%' ORDER BY id DESC";
 
 
                     $stmt = $pdo->prepare($query);

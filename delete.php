@@ -2,16 +2,19 @@
 session_start();
 $authority = $_SESSION['authority'];
 
-if ($authority == 1) {
+if ($_SESSION['authority'] && $authority == 1) {
     $class = "";
     $msg = "";
     $form = "";
     $account = "";
-} else {
+} else if ($_SESSION['authority'] && $authority == 0) {
     $class = "hide";
     $msg = "操作できません。アカウント権限を確認してください";
     $form = "do_not_submit";
     $account = "do_not_submit";
+} else {
+    header('Location:http://localhost/regist/login.php');
+    exit;
 }
 
 ?>

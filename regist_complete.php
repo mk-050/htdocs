@@ -61,8 +61,6 @@ values('" . $_POST['familyName'] . "','" . $_POST['givenName'] . "','" . $_POST[
 
             <div class="complete">
                 <p>登録完了しました</p>
-                <?PHP echo $authority; ?>
-
             </div>
 
             <div>
