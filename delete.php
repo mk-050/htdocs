@@ -2,7 +2,7 @@
 session_start();
 $authority = $_SESSION['authority'];
 
-if ($_SESSION['authority'] && $authority == 1) {
+if (isset($_POST['mail']) && $authority == 1) {
     $class = "";
     $msg = "";
     $form = "";
@@ -13,7 +13,7 @@ if ($_SESSION['authority'] && $authority == 1) {
     $form = "do_not_submit";
     $account = "do_not_submit";
 } else {
-    header('Location:http://localhost/regist/login.php');
+    header('Location:http://localhost/regist/list.php');
     exit;
 }
 

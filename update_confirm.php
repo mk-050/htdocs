@@ -1,3 +1,9 @@
+<?php
+
+if (!isset($_POST['familyName']) || !isset($_POST['givenName']) || !isset($_POST['familyName_kana']) || !isset($_POST['givenName_kana']) || !isset($_POST['mail']) || !isset($_POST['radio']) || !isset($_POST['postalCode']) || !isset($_POST['prefecture']) || !isset($_POST['address_1']) || !isset($_POST['address_2']) || !isset($_POST['privilege'])) {
+    header('Location:http://localhost/regist/update.php');
+} ?>
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -105,7 +111,7 @@
                         <?php echo $_POST['address_1']; ?>
 
                     </div><br>
-                    
+
                     <div><label class="conform7">住所（番地）</label>
                         <div class="box">
                             <div><span><?php echo $_POST['address_2']; ?></span>

@@ -1,3 +1,9 @@
+<?php
+
+if (empty($_POST['id']) || empty($_POST['mail'])) {
+    header('Location:http://localhost/regist/list.php');
+} ?>
+
 <!DOCTYPE html>
 <html lang="ja">
 

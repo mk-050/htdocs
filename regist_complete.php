@@ -5,7 +5,7 @@ $authority = $_SESSION['authority'];
 mb_internal_encoding("UTF-8");
 
 
-if ($authority == 1) {
+if (!empty($_POST['mai']) && $authority == 1) {
     try {
         $pdo = new PDO("mysql:dbname=lesson01;host=localhost;", "mkuser", "mysql");
 
@@ -22,8 +22,7 @@ values('" . $_POST['familyName'] . "','" . $_POST['givenName'] . "','" . $_POST[
         exit;
     }
 } else {
-    $_SESSION['error'] = "regist_error";
-    header('Location:http://localhost/regist/error.php');
+    header('Location:http://localhost/regist/regist.php');
     exit;
 }
 

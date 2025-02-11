@@ -1,19 +1,37 @@
 <?php
 session_start();
-$authority = $_SESSION['authority'];
 
-if ($_SESSION['authority'] && $authority == 1) {
+if (isset($_POST['mail'])) {
+    $authority = $_SESSION['authority'];
+
+    if ($authority == 1) {
+        $class = "";
+        $msg = "";
+        $form = "";
+        $div = "";
+    } else if ($authority == 0) {
+        $class = "hide";
+        $msg = "操作できません。アカウント権限を確認してください";
+        $form = "do_not_submit";
+        $div = "do_not_submit";
+    }
+} else {
+    header('Location:http://localhost/regist/list.php');
+    exit;
+}
+
+if (isset($_POST['mail']) && $authority == 1) {
     $class = "";
     $msg = "";
     $form = "";
     $div = "";
-} else if ($_SESSION['authority'] && $authority == 0) {
+} else if (isset($_POST['mail']) && $authority == 0) {
     $class = "hide";
     $msg = "操作できません。アカウント権限を確認してください";
     $form = "do_not_submit";
     $div = "do_not_submit";
 } else {
-    header('Location:http://localhost/regist/login.php');
+    header('Location:http://localhost/regist/list.php');
     exit;
 }
 
@@ -153,6 +171,7 @@ if ($_SESSION['authority'] && $authority == 1) {
                                                                                                                         echo $_POST['mail'];
                                                                                                                     } ?>">
                 </div>
+                <div id="num5" class="error"></div>
                 <br>
 
                 <div class="<?PHP echo $div; ?>"><label>パスワード</label>

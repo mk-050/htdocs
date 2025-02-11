@@ -4,7 +4,7 @@ session_start();
 $authority = $_SESSION['authority'];
 mb_internal_encoding("UTF-8");
 
-if ($authority == 1) {
+if (!empty($_POST['mai']) && $authority == 1) {
     try {
         $pdo = new PDO("mysql:dbname=lesson01;host=localhost;", "mkuser", "mysql");
 
@@ -21,8 +21,7 @@ if ($authority == 1) {
         exit;
     }
 } else {
-    $_SESSION['error'] = "delete_error";
-    header('Location:http://localhost/regist/error.php');
+    header('Location:http://localhost/regist/list.php');
     exit;
 }
 
