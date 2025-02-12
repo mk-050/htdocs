@@ -117,7 +117,6 @@ if (isset($_SESSION['authority'])) {
                 <input type="submit" class="submitA" name="submit" value="検索">
             </form>
 
-
             <?php
 
             if (isset($_POST['submit']) && $authority == 1) {
