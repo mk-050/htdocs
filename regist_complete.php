@@ -5,7 +5,7 @@ $authority = $_SESSION['authority'];
 mb_internal_encoding("UTF-8");
 
 
-if (!empty($_POST['mai']) && $authority == 1) {
+if (!empty($_POST['mail']) && $authority == 1) {
     try {
         $pdo = new PDO("mysql:dbname=lesson01;host=localhost;", "mkuser", "mysql");
 

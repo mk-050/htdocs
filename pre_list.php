@@ -82,6 +82,7 @@ if (isset($_SESSION['authority'])) {
                         <td colspan="3"><input type="text" class="text" pattern="[\u30A1-\u30FF]*" maxlength="10" name="familyName_kana" value="<?php if (!empty($_POST['familyName_kana'])) {
                                                                                                                                                     echo $_POST['familyName_kana'];
                                                                                                                                                 } ?>"></td>
+
                         <th>カナ（名）</th>
                         <td colspan="3"><input type="text" class="text" pattern="[\u30A1-\u30FF]*" maxlength="10" name="givenName_kana" value="<?php if (!empty($_POST['givenName_kana'])) {
                                                                                                                                                     echo $_POST['givenName_kana'];
@@ -122,6 +123,52 @@ if (isset($_SESSION['authority'])) {
 
             if (isset($_POST['submit']) && $authority == 1) {
 
+                if (isset($_POST['familyName'])) {
+                    $familyName = $_POST['familyName'];
+                } else {
+                    $familyName = "";
+                }
+
+                if (isset($_POST['givenName'])) {
+                    $givenName = $_POST['givenName'];
+                } else {
+                    $givenName = "";
+                }
+
+                if (isset($_POST['familyName_kana'])) {
+                    $familyName_kana = $_POST['familyName_kana'];
+                } else {
+                    $familyName_kana = "";
+                }
+
+                if (isset($_POST['givenName_kana'])) {
+                    $givenName_kana = $_POST['givenName_kana'];
+                } else {
+                    $givenName_kana = "";
+                }
+
+                if (isset($_POST['mail_A'])) {
+                    $mail_A = $_POST['mail_A'];
+                } else {
+                    $mail_A = "";
+                }
+
+                if (isset($_POST['radio']) && $_POST['radio'] == 0) {
+                    $radio = 0;
+                } else if (isset($_POST['radio']) && $_POST['radio'] == 1) {
+                    $radio = 1;
+                } else {
+                    $radio = "";
+                }
+
+                if (isset($_POST['privilege']) && $_POST['privilege'] == 0) {
+                    $privilege = 0;
+                } else if (isset($_POST['privilege']) && $_POST['privilege'] == 1) {
+                    $privilege = 1;
+                } else {
+                    $privilege = "";
+                }
+
 
                 try {
                     // PDOでデータベースに接続
@@ -129,49 +176,8 @@ if (isset($_SESSION['authority'])) {
                     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
                     // SQLクエリの準備と実行
-                    $query = "SELECT * FROM account where 1 ";
+                    $query = "SELECT * FROM account where family_name LIKE '%$familyName%' and last_name LIKE '%$givenName%'  and family_name_kana LIKE '%$familyName_kana%' and last_name_kana LIKE '%$givenName_kana%' and  mail LIKE '%$mail_A%' and gender LIKE '%$radio%' and authority LIKE '%$privilege%' ORDER BY id DESC";
 
-                    if (isset($_POST['familyName'])) {
-                        $familyName = $_POST['familyName'];
-                        $query .= "AND family_name LIKE '%$familyName%'";
-                    }
-
-                    if (isset($_POST['givenName'])) {
-                        $givenName = $_POST['givenName'];
-                        $query .= "AND last_name LIKE '%$givenName%'";
-                    }
-                    if (isset($_POST['familyName_kana'])) {
-                        $familyName_kana = $_POST['familyName_kana'];
-                        $query .= "AND family_name_kana LIKE '%$familyName_kana%'";
-                    }
-
-                    if (isset($_POST['givenName_kana'])) {
-                        $givenName_kana = $_POST['givenName_kana'];
-                        $query .= "AND last_name_kana LIKE '%$givenName_kana%'";
-                    }
-
-                    if (isset($_POST['mail_A'])) {
-                        $mail_A = $_POST['mail_A'];
-                        $query .= "AND  mail LIKE '%$mail_A%'";
-                    }
-
-                    if (isset($_POST['radio']) && $_POST['radio'] == 0) {
-                        $radio = 0;
-                        $query .= "AND gender LIKE '%$radio%'";
-                    } else if (isset($_POST['radio']) && $_POST['radio'] == 1) {
-                        $radio = 1;
-                        $query .= "AND gender LIKE '%$radio%'";
-                    }
-
-                    if (isset($_POST['privilege']) && $_POST['privilege'] == 0) {
-                        $privilege = 0;
-                        $query .= "AND authority LIKE '%$privilege%'";
-                    } else if (isset($_POST['privilege']) && $_POST['privilege'] == 1) {
-                        $privilege = 1;
-                        $query .= "AND authority LIKE '%$privilege%'";
-                    }
-
-                    $query .= "ORDER BY id DESC";
 
                     $stmt = $pdo->prepare($query);
                     $stmt->execute();

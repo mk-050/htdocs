@@ -1,6 +1,6 @@
 <?php
 
-if (empty($_POST['mai']) || empty($_POST['password'])) {
+if (empty($_POST['mail']) || empty($_POST['password'])) {
     header('Location:http://localhost/regist/regist.php');
 } ?>
 
