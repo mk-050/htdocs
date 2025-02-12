@@ -157,18 +157,18 @@ if (isset($_SESSION['authority'])) {
 
                     if (isset($_POST['radio']) && $_POST['radio'] == 0) {
                         $radio = 0;
-                        $query .= "AND gender LIKE '%$radio%'";
+                        $query .= "AND gender = 0 ";
                     } else if (isset($_POST['radio']) && $_POST['radio'] == 1) {
                         $radio = 1;
-                        $query .= "AND gender LIKE '%$radio%'";
+                        $query .= "AND gender = 1 ";
                     }
 
                     if (isset($_POST['privilege']) && $_POST['privilege'] == 0) {
                         $privilege = 0;
-                        $query .= "AND authority LIKE '%$privilege%'";
+                        $query .= "AND authority = 0 ";
                     } else if (isset($_POST['privilege']) && $_POST['privilege'] == 1) {
                         $privilege = 1;
-                        $query .= "AND authority LIKE '%$privilege%'";
+                        $query .= "AND authority = 1 ";
                     }
 
                     $query .= "ORDER BY id DESC";
